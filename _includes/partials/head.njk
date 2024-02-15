@@ -1,0 +1,95 @@
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{{ metadata.title }}</title>
+<meta name="description" content="{{ description or metadata.description }}" />
+<meta name="keywords" content="{{ metadata.tags | join(",")}}" />
+
+<!-- Favicons -->
+
+<link
+  rel="apple-touch-icon"
+  sizes="76x76"
+  href="/favicons/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/favicons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/favicons/favicon-16x16.png"
+/>
+<link rel="manifest" href="/favicons/site.webmanifest" />
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="{{ metadata.title }}" />
+<meta property="og:title" content="{{ title or metadata.title }}" />
+<meta
+  property="og:description"
+  content="{{ description or metadata.description }}"
+/>
+<meta property="og:url" content="{{ url or metadata.url }}" />
+<meta property="og:type" content="{{ ogType or metadata.opengraph.type }}" />
+
+<meta name="generator" content="{{ eleventy.generator }}" />
+
+<link rel="stylesheet" href="/css/index.css" />
+<link
+  href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Feeds -->
+<link
+  rel="alternate"
+  href="/feed/atom.xml"
+  type="application/atom+xml"
+  title="{{ metadata.title }}"
+/>
+<link
+  rel="alternate"
+  href="/feed/rss.xml"
+  type="application/rss+xml"
+  title="{{ metadata.title }}"
+/>
+<link
+  rel="alternate"
+  href="/feed/feed.json"
+  type="application/json"
+  title="{{ metadata.title }}"
+/>
+
+<!-- LD+JSON -->
+
+{% if tags | contains("post") %}
+<meta property="article:published_time" content="{{ page.date }}" />
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "{{ title }}",
+    "proficiencyLevel": "{{ proficiencyLevel }}",
+    "image": "{{ opengraph.image or metadata.opengraph.image}}",
+    "author": "{{ author or metadata.author.name }}",
+    "keywords": "{{ tags | filterTagList | join(" ") }}",
+    "url": "{{ page.url | htmlBaseUrl(metadata.url) }}",
+    "datePublished": "{{ page.date }}",
+    "dateCreated": "{{ page.date }}",
+    "dateModified": "{{ page.date }}",
+    "description": "{{ description }}",
+    {# TODO "genre": "search engine optimization", #}
+    {# TODO "wordcount": "1120", #}
+  }
+</script>
+
+{% endif %}

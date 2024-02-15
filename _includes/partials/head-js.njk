@@ -1,0 +1,56 @@
+<script>
+  function getPreferredColorScheme() {
+    const systemScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light"
+    let chosenScheme = localStorage.getItem("scheme") ?? systemScheme
+
+    if (systemScheme === chosenScheme) {
+      localStorage.removeItem("scheme")
+    }
+
+    return chosenScheme
+  }
+
+  // Write chosen color scheme to local storage
+  // Unless the system scheme matches the the stored scheme, in which case... remove from local storage
+  function savePreferredColorScheme(scheme) {
+    const systemScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light"
+
+    if (systemScheme === scheme) {
+      localStorage.removeItem("scheme")
+    } else {
+      localStorage.setItem("scheme", scheme)
+    }
+  }
+
+  // Get the current scheme, and apply the opposite
+  function toggleColorScheme() {
+    let newScheme = "light"
+    let scheme = getPreferredColorScheme()
+    if (scheme === "light") {
+      newScheme = "dark"
+    }
+
+    applyPreferredColorScheme(newScheme)
+    savePreferredColorScheme(newScheme)
+  }
+
+  // Apply the chosen color scheme by traversing stylesheet rules, and applying a medium.
+  function applyPreferredColorScheme(scheme) {
+    document.documentElement.setAttribute("data-theme", scheme)
+  }
+
+  applyPreferredColorScheme(getPreferredColorScheme())
+  // add listener:
+  document.addEventListener("DOMContentLoaded", function (event) {
+    document
+      .getElementById("toggle-color-scheme")
+      .addEventListener("click", toggleColorScheme)
+    console.log("doc", document.getElementById("toggle-color-scheme"))
+  })
+</script>

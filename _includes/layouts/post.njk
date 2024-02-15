@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+---
+
+{% block title_content %}
+<header>
+  <ul class="list-horizontal">
+    <time>{{ page.date | readableDate }}</time>
+
+    {%- for tag in tags | filterTagList %} {%- set tagUrl %}/tags/{{ tag |
+    slugify }}/{% endset %}
+    <li class="page-tag">
+      <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+    </li>
+    {%- endfor %}
+  </ul>
+  <h1>{{ title }}</h1>
+</header>
+
+{% endblock title_content %} {% block main_content %}
+<article>{{ content | safe }}</article>
+<footer>
+  {%- if collections.post %} {%- set previousPost = collections.post |
+  getPreviousCollectionItem %} {%- set nextPost = collections.post |
+  getNextCollectionItem %} {%- if nextPost or previousPost %}
+  <nav class="pagination">
+    <div class="{%- if previousPost %}prev{% endif %}">
+      {%- if previousPost %}
+      <a href="{{ previousPost.url }}">
+        <strong>‹ {{ previousPost.data.title }}</strong></a
+      >
+      {% endif %}
+    </div>
+
+    <div class="{%- if nextPost %}next{% endif %}">
+      {%- if nextPost %}
+      <a href="{{ nextPost.url }}">
+        <strong>{{ nextPost.data.title }} ›</strong></a
+      >
+      {% endif %}
+    </div>
+  </nav>
+  {%- endif %} {%- endif %}
+</footer>
+{% endblock main_content %}

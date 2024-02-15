@@ -1,0 +1,16 @@
+{
+  "title": "Eleventy Starter Blog",
+  "description": "Short demo for ",
+  "url": "https://example.com",
+  "language": "en",
+  "tags": ["eleventy", "blog", "theme", "template", "starter"],
+  "author": {
+    "name": "<Author Name>",
+    "email": "author.email@example.com",
+    "url": "https://example.com/about"
+  },
+  "opengraph": {
+    "type": "website",
+    "image": ""
+  }
+}

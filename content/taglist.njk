@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: Tags
+eleventyNavigation:
+  key: Tags
+  order: 3
+permalink: /tags/
+---
+
+<h1>Tags</h1>
+
+<ul class="blog-posts">
+  {% for tag in collections.all | allTags | filterTagList | sort %} {% set
+  tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+  <li class="page-tag">
+    <a href="{{ tagUrl }}">{{ tag }}</a> ({{ collections[tag].length }})
+  </li>
+  {% endfor %}
+</ul>
