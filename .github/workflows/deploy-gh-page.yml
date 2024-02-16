@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/test/gh-page'
         with:
           publish_dir: ./_site
           github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
