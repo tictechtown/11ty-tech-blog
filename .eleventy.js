@@ -129,6 +129,7 @@ module.exports = function (eleventyConfig) {
       includes: "../_includes", // default: "_includes"
       data: "../_data", // default: "_data"
       output: "_site",
+      pathPrefix: "/11ty-tech-blog/",
     },
   };
 };
