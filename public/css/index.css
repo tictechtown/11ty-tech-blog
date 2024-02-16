@@ -20,7 +20,7 @@
     --text-color: #ddd;
     --link-color: #8cc2dd;
     --visited-color: #8b6fcb;
-    --code-background-color: #000;
+    --code-background-color: #2d2d2d;
     --code-color: #ddd;
     --blockquote-color: #ccc;
   }
@@ -32,7 +32,7 @@
   --text-color: #ddd;
   --link-color: #8cc2dd;
   --visited-color: #8b6fcb;
-  --code-background-color: #000;
+  --code-background-color: #2d2d2d;
   --code-color: #ddd;
   --blockquote-color: #ccc;
 }
@@ -59,6 +59,10 @@ h5,
 h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
+}
+
+h1 {
+  line-height: 1.2;
 }
 
 a {
@@ -103,14 +107,18 @@ img {
 
 pre {
   background-color: var(--code-background-color);
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
 }
 
-code {
+p code {
   font-family: monospace;
   padding: 2px;
   background-color: var(--code-background-color);
   color: var(--code-color);
   border-radius: 3px;
+  border: 1px solid #ccc;
   overflow-x: auto;
 }
 
@@ -118,9 +126,9 @@ blockquote {
   border-left: 1px solid #999;
   color: var(--code-color);
   background-color: var(--code-background-color);
-
   padding-left: 20px;
   font-style: italic;
+  margin-left: 1em;
 }
 
 footer {
@@ -144,8 +152,7 @@ main footer {
   width: auto !important;
 }
 
-.highlight,
-.code:not(.code) {
+.highlight {
   padding: 1px 15px;
   background-color: var(--code-background-color);
   color: var(--code-color);
@@ -225,6 +232,10 @@ nav {
   text-align: left;
 }
 
+.pagination a:hover {
+  text-decoration-color: var(--heading-color);
+}
+
 .pagination div {
   width: 50%;
 }
@@ -235,7 +246,6 @@ nav {
 
 hr {
   opacity: 0.7;
-  /* border-color: #e2e8f0; */
 }
 
 .img-txt {
@@ -249,4 +259,10 @@ hr {
   height: 1rem;
   fill: white;
   padding: 0.1rem;
+}
+
+video,
+.video {
+  width: 100%;
+  aspect-ratio: 16/9;
 }

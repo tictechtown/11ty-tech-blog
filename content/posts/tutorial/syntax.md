@@ -18,6 +18,14 @@ See [the docs](https://www.getzola.org/documentation/content/syntax-highlighting
 
 If we want, we can also `specify inline code` which is useful for `the small stuff`.
 
+### Code Blocks without tag
+
+```
+test 1, test 2, test 3
+another test 1, another test 2, another test 3
+final test 1, final test 2, final test 3
+```
+
 ### Markdown
 
 ````markdown
