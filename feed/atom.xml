@@ -5,7 +5,7 @@
   <link href="https://example.com/11ty-tech-blog/feed/feed/atom.xml" rel="self" />
   <link href="https://example.com/11ty-tech-blog/" ></link>
   <updated
-    >2024-02-16T20:26:56Z</updated
+    >2024-02-16T21:06:21Z</updated
   >
   <id>https://example.com</id>
   <author>
@@ -15,36 +15,38 @@
   <entry>
     <title>How to set Opengraph preview image and metadata</title>
     <link href="https://example.com/11ty-tech-blog/posts/tutorial/opengraph/" />
-    <updated>2024-02-16T20:26:56Z</updated>
+    <updated>2024-02-16T21:06:21Z</updated>
     <id>https://example.com/11ty-tech-blog/posts/tutorial/opengraph/</id>
     <content type="html"
       >&lt;p&gt;When sharing a URL, some sites will generate a preview with a title, description and image using certain &lt;a href=&quot;https://ogp.me/&quot;&gt;OpenGraph&lt;/a&gt; metadata.&lt;/p&gt;
 &lt;h3&gt;Set the preview image&lt;/h3&gt;
-&lt;p&gt;A default Opengraph preview image for all posts is set in the &lt;a href=&quot;https://example.com/11ty-tech-blog/posts/tutorial/opengraph/2022-01-01-edit-the-metadata.md&quot;&gt;metadata.json&lt;/a&gt;, which looks like:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
-&amp;lt;!-- {% figure metadata.opengraph.image, &amp;quot;Default opengraph image&amp;quot;, &amp;quot;third&amp;quot; %} --&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A default Opengraph preview image for all posts is set in the &lt;code&gt;metadata.json&lt;/code&gt;, which looks like:&lt;/p&gt;
+&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;title&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;opengraph&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;image&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;image-url&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;website&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To override the preview image for a specific post, set the &lt;code&gt;opengraph.image&lt;/code&gt; value in the frontmatter:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: How to set Opengraph preview image and metadata
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: How to set Opengraph preview image and metadata
 opengraph:
-  image: /assets/images/image003.jpg
----
-&lt;/code&gt;&lt;/pre&gt;
+  image: /images/image003.jpg&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;Title, description, and tags&lt;/h3&gt;
 &lt;p&gt;All three of these are taken from the post&#39;s frontmatter&#39;s title, description, and tags.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: How to set Opengraph preview image and metadata
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: How to set Opengraph preview image and metadata
 description: Instructions on setting up various Opengraph headers
 tags:
   - opengraph
   - image
   - preview
 opengraph:
-  image: /assets/images/image003.jpg
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If missing, the defaults are taken from the &lt;a href=&quot;https://example.com/11ty-tech-blog/posts/tutorial/opengraph/2022-01-01-edit-the-metadata.md&quot;&gt;metadata.json&lt;/a&gt; again.&lt;/p&gt;
+  image: /assets/images/image003.jpg&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If missing, the defaults are taken from the &lt;code&gt;metadata.json&lt;/code&gt; again.&lt;/p&gt;
 &lt;h3&gt;Author and type&lt;/h3&gt;
 &lt;p&gt;The author and type are always taken from the metadata.json author and type.&lt;/p&gt;
 </content
@@ -53,7 +55,7 @@ opengraph:
   <entry>
     <title>Post with notices or alert boxes</title>
     <link href="https://example.com/11ty-tech-blog/posts/tutorial/notice/" />
-    <updated>2024-02-16T20:26:56Z</updated>
+    <updated>2024-02-16T21:06:21Z</updated>
     <id>https://example.com/11ty-tech-blog/posts/tutorial/notice/</id>
     <content type="html"
       >&lt;p&gt;This post will show how to create different kinds of notice or alert boxes such as a regular box, as well as info, success, warning, and danger.&lt;/p&gt;
