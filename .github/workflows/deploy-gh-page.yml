@@ -16,17 +16,17 @@ jobs:
 
     steps:
       - name: Checkout Content
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "18.4"
+          node-version: "18.17"
 
       - name: Install dependencies & build
         run: |
           npm ci
-          npm run build
+          npx @11ty/eleventy --pathprefix=11ty-tech-blog
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
