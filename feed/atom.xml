@@ -5,7 +5,7 @@
   <link href="https://example.com/11ty-tech-blog/feed/feed/atom.xml" rel="self" />
   <link href="https://example.com/11ty-tech-blog/" ></link>
   <updated
-    >2024-02-16T21:09:55Z</updated
+    >2024-02-16T21:18:47Z</updated
   >
   <id>https://example.com</id>
   <author>
@@ -15,7 +15,7 @@
   <entry>
     <title>How to set Opengraph preview image and metadata</title>
     <link href="https://example.com/11ty-tech-blog/posts/tutorial/opengraph/" />
-    <updated>2024-02-16T21:09:55Z</updated>
+    <updated>2024-02-16T21:18:47Z</updated>
     <id>https://example.com/11ty-tech-blog/posts/tutorial/opengraph/</id>
     <content type="html"
       >&lt;p&gt;When sharing a URL, some sites will generate a preview with a title, description and image using certain &lt;a href=&quot;https://ogp.me/&quot;&gt;OpenGraph&lt;/a&gt; metadata.&lt;/p&gt;
@@ -57,7 +57,7 @@ opengraph:
   <entry>
     <title>Post with notices or alert boxes</title>
     <link href="https://example.com/11ty-tech-blog/posts/tutorial/notice/" />
-    <updated>2024-02-16T21:09:55Z</updated>
+    <updated>2024-02-16T21:18:47Z</updated>
     <id>https://example.com/11ty-tech-blog/posts/tutorial/notice/</id>
     <content type="html"
       >&lt;p&gt;This post will show how to create different kinds of notice or alert boxes such as a regular box, as well as info, success, warning, and danger.&lt;/p&gt;
