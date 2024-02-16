@@ -33,4 +33,4 @@ jobs:
         if: github.ref == 'refs/heads/test/gh-page'
         with:
           publish_dir: ./_site
-          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
