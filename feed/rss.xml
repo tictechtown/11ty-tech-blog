@@ -43,7 +43,7 @@ opengraph:
 &lt;h2&gt;Testing your OpenGraph Metadata&lt;/h2&gt;
 &lt;p&gt;You can go to the &lt;a href=&quot;https://www.opengraph.xyz/&quot;&gt;opengraph.xyz&lt;/a&gt; website, enter your published URL and see if there&#39;s any issue.&lt;/p&gt;
 </description>
-      <pubDate>Fri, 16 Feb 2024 22:32:39 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2024 22:48:58 +0000</pubDate>
       <dc:creator>&lt;Author Name&gt;</dc:creator>
       <guid>https://example.com/posts/tutorial/opengraph/</guid>
     </item>
@@ -92,7 +92,7 @@ This is a danger notice. **Smoking is fatal**.
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;notice danger&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;This is a danger notice. **Smoking is fatal**.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-      <pubDate>Fri, 16 Feb 2024 22:32:39 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2024 22:48:58 +0000</pubDate>
       <dc:creator>&lt;Author Name&gt;</dc:creator>
       <guid>https://example.com/posts/tutorial/notice/</guid>
     </item>
