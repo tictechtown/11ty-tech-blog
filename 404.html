@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Eleventy Starter Blog</title>
+<meta name="description" content="Short demo for " />
+<meta name="keywords" content="eleventy,blog,theme,template,starter" />
+
+<!-- Favicons -->
+
+<link
+  rel="apple-touch-icon"
+  sizes="76x76"
+  href="/favicons/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/favicons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/favicons/favicon-16x16.png"
+/>
+<link rel="manifest" href="/favicons/site.webmanifest" />
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Eleventy Starter Blog" />
+<meta property="og:title" content="Eleventy Starter Blog" />
+<meta
+  property="og:description"
+  content="Short demo for "
+/>
+<meta property="og:url" content="https://example.com" />
+<meta property="og:type" content="website" />
+
+<meta name="generator" content="Eleventy v2.0.1" />
+
+<link rel="stylesheet" href="/css/index.css" />
+<link
+  href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Feeds -->
+<link
+  rel="alternate"
+  href="/feed/atom.xml"
+  type="application/atom+xml"
+  title="Eleventy Starter Blog"
+/>
+<link
+  rel="alternate"
+  href="/feed/rss.xml"
+  type="application/rss+xml"
+  title="Eleventy Starter Blog"
+/>
+<link
+  rel="alternate"
+  href="/feed/feed.json"
+  type="application/json"
+  title="Eleventy Starter Blog"
+/>
+
+<!-- LD+JSON -->
+
+
+ <script>
+  function getPreferredColorScheme() {
+    const systemScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light"
+    let chosenScheme = localStorage.getItem("scheme") ?? systemScheme
+
+    if (systemScheme === chosenScheme) {
+      localStorage.removeItem("scheme")
+    }
+
+    return chosenScheme
+  }
+
+  // Write chosen color scheme to local storage
+  // Unless the system scheme matches the the stored scheme, in which case... remove from local storage
+  function savePreferredColorScheme(scheme) {
+    const systemScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light"
+
+    if (systemScheme === scheme) {
+      localStorage.removeItem("scheme")
+    } else {
+      localStorage.setItem("scheme", scheme)
+    }
+  }
+
+  // Get the current scheme, and apply the opposite
+  function toggleColorScheme() {
+    let newScheme = "light"
+    let scheme = getPreferredColorScheme()
+    if (scheme === "light") {
+      newScheme = "dark"
+    }
+
+    applyPreferredColorScheme(newScheme)
+    savePreferredColorScheme(newScheme)
+  }
+
+  // Apply the chosen color scheme by traversing stylesheet rules, and applying a medium.
+  function applyPreferredColorScheme(scheme) {
+    document.documentElement.setAttribute("data-theme", scheme)
+  }
+
+  applyPreferredColorScheme(getPreferredColorScheme())
+  // add listener:
+  document.addEventListener("DOMContentLoaded", function (event) {
+    document
+      .getElementById("toggle-color-scheme")
+      .addEventListener("click", toggleColorScheme)
+    console.log("doc", document.getElementById("toggle-color-scheme"))
+  })
+</script>
+ 
+  </head>
+
+  <body>
+    <header>
+      <h1 class="logo">
+        <a href="https://example.com"> Eleventy Starter Blog</a>
+      </h1>
+      <nav>
+  <ul>
+    <li>
+      <strong><a href="/">Home</a></strong>
+    </li>
+    <li>
+      <strong><a href="/archive/">Archive</a></strong>
+    </li>
+    <li>
+      <strong><a href="/tags/">Tags</a></strong>
+    </li>
+    <li>
+      <strong><a href="/about/">About</a></strong>
+    </li>
+  </ul>
+  <i id="toggle-color-scheme" class="svgs">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+      <path
+        d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
+      />
+    </svg>
+  </i>
+</nav>
+<hr />
+
+    </header>
+    <main class="content">
+      <h1>Content not found.</h1>
+<p>Go <a href="/">home</a>.</p>
+<!--
+
+Read more: https://www.11ty.dev/docs/quicktips/not-found/
+
+This will work for both GitHub pages and Netlify:
+
+* https://help.github.com/articles/creating-a-custom-404-page-for-your-github-pages-site/
+* https://www.netlify.com/docs/redirects/#custom-404
+
+-->
+
+    </main>
+    <hr />
+<footer>
+  Made with <span role="img" aria-label="Love">♥</span> with
+  <a href="https://www.11ty.dev/">Eleventy</a>
+  <br />
+
+  Subscribe to my <a href="/feed/feed.xml">RSS Feed</a>&nbsp;<img
+    src="/images/rss-512.png"
+    class="img-txt"
+  />
+</footer>
+
+  </body>
+</html>

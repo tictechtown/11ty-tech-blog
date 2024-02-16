@@ -1,0 +1,55 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+> 
+  <url>
+    <loc>https://example.com/posts/2024/lorem-ipsum/</loc>
+    <lastmod>2018-May-01</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/posts/2024/markdown-syntax/</loc>
+    <lastmod>2021-March-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/posts/2024/markdown-syntax-2/</loc>
+    <lastmod>2021-March-24</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/posts/tutorial/code/</loc>
+    <lastmod>2023-January-05</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/about/</loc>
+    <lastmod>2024-February-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/archive/</loc>
+    <lastmod>2024-February-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2024-February-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/posts/tutorial/notice/</loc>
+    <lastmod>2024-February-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/posts/tutorial/opengraph/</loc>
+    <lastmod>2024-February-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/posts/tutorial/post-date/</loc>
+    <lastmod>2024-February-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/tags/lorem%20ipsum/</loc>
+    <lastmod>2024-February-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/tags/</loc>
+    <lastmod>2024-February-16</lastmod>
+  </url>
+</urlset>

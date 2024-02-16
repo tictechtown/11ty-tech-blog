@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Eleventy Starter Blog</title>
+<meta name="description" content="This is a post on My Blog with a wall of text." />
+<meta name="keywords" content="eleventy,blog,theme,template,starter" />
+
+<!-- Favicons -->
+
+<link
+  rel="apple-touch-icon"
+  sizes="76x76"
+  href="/favicons/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/favicons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/favicons/favicon-16x16.png"
+/>
+<link rel="manifest" href="/favicons/site.webmanifest" />
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Eleventy Starter Blog" />
+<meta property="og:title" content="Customary Lorem Ipsum post" />
+<meta
+  property="og:description"
+  content="This is a post on My Blog with a wall of text."
+/>
+<meta property="og:url" content="https://example.com" />
+<meta property="og:type" content="website" />
+
+<meta name="generator" content="Eleventy v2.0.1" />
+
+<link rel="stylesheet" href="/css/index.css" />
+<link
+  href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Feeds -->
+<link
+  rel="alternate"
+  href="/feed/atom.xml"
+  type="application/atom+xml"
+  title="Eleventy Starter Blog"
+/>
+<link
+  rel="alternate"
+  href="/feed/rss.xml"
+  type="application/rss+xml"
+  title="Eleventy Starter Blog"
+/>
+<link
+  rel="alternate"
+  href="/feed/feed.json"
+  type="application/json"
+  title="Eleventy Starter Blog"
+/>
+
+<!-- LD+JSON -->
+
+
+<meta property="article:published_time" content="Tue May 01 2018 00:00:00 GMT+0000 (Coordinated Universal Time)" />
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Customary Lorem Ipsum post",
+    "proficiencyLevel": "Beginner",
+    "image": "",
+    "author": "&lt;Author Name&gt;",
+    "keywords": "lorem ipsum",
+    "url": "https://example.com/posts/2024/lorem-ipsum/",
+    "datePublished": "Tue May 01 2018 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "dateCreated": "Tue May 01 2018 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "dateModified": "Tue May 01 2018 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "description": "This is a post on My Blog with a wall of text.",
+    
+    
+  }
+</script>
+
+
+ <script>
+  function getPreferredColorScheme() {
+    const systemScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light"
+    let chosenScheme = localStorage.getItem("scheme") ?? systemScheme
+
+    if (systemScheme === chosenScheme) {
+      localStorage.removeItem("scheme")
+    }
+
+    return chosenScheme
+  }
+
+  // Write chosen color scheme to local storage
+  // Unless the system scheme matches the the stored scheme, in which case... remove from local storage
+  function savePreferredColorScheme(scheme) {
+    const systemScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light"
+
+    if (systemScheme === scheme) {
+      localStorage.removeItem("scheme")
+    } else {
+      localStorage.setItem("scheme", scheme)
+    }
+  }
+
+  // Get the current scheme, and apply the opposite
+  function toggleColorScheme() {
+    let newScheme = "light"
+    let scheme = getPreferredColorScheme()
+    if (scheme === "light") {
+      newScheme = "dark"
+    }
+
+    applyPreferredColorScheme(newScheme)
+    savePreferredColorScheme(newScheme)
+  }
+
+  // Apply the chosen color scheme by traversing stylesheet rules, and applying a medium.
+  function applyPreferredColorScheme(scheme) {
+    document.documentElement.setAttribute("data-theme", scheme)
+  }
+
+  applyPreferredColorScheme(getPreferredColorScheme())
+  // add listener:
+  document.addEventListener("DOMContentLoaded", function (event) {
+    document
+      .getElementById("toggle-color-scheme")
+      .addEventListener("click", toggleColorScheme)
+    console.log("doc", document.getElementById("toggle-color-scheme"))
+  })
+</script>
+ 
+  </head>
+
+  <body>
+    <header>
+      <h1 class="logo">
+        <a href="https://example.com"> Eleventy Starter Blog</a>
+      </h1>
+      <nav>
+  <ul>
+    <li>
+      <strong><a href="/">Home</a></strong>
+    </li>
+    <li>
+      <strong><a href="/archive/">Archive</a></strong>
+    </li>
+    <li>
+      <strong><a href="/tags/">Tags</a></strong>
+    </li>
+    <li>
+      <strong><a href="/about/">About</a></strong>
+    </li>
+  </ul>
+  <i id="toggle-color-scheme" class="svgs">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+      <path
+        d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
+      />
+    </svg>
+  </i>
+</nav>
+<hr />
+
+    </header>
+    <main class="content">
+      
+
+<header>
+  <ul class="list-horizontal">
+    <time>May 1, 2018</time>
+    <li class="page-tag">
+      <a href="/tags/lorem-ipsum/" class="post-tag">lorem ipsum</a>
+    </li>
+  </ul>
+  <h1>Customary Lorem Ipsum post</h1>
+</header>
+
+ 
+<article><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor orci eu lobortis elementum nibh tellus molestie nunc non. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Pharetra sit amet aliquam id. Volutpat odio facilisis mauris sit amet massa vitae tortor condimentum. Semper viverra nam libero justo laoreet. Mattis rhoncus urna neque viverra justo nec ultrices dui. Mauris augue neque gravida in fermentum et sollicitudin. Nunc mattis enim ut tellus elementum sagittis vitae. Nibh sed pulvinar proin gravida hendrerit lectus. Diam quam nulla porttitor massa. Ac felis donec et odio pellentesque diam volutpat. Cursus eget nunc scelerisque viverra mauris in. Non curabitur gravida arcu ac tortor dignissim convallis. Adipiscing at in tellus integer feugiat.</p>
+<h2>Consectetur libero id</h2>
+<p>Faucibus nisl tincidunt eget nullam non nisi. Tristique nulla aliquet enim tortor at auctor urna. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Cras ornare arcu dui vivamus arcu felis bibendum ut. Eget nulla facilisi etiam dignissim diam quis enim. Consectetur purus ut faucibus pulvinar elementum. Ultricies tristique nulla aliquet enim tortor at auctor urna nunc. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Id semper risus in hendrerit gravida rutrum. Dignissim convallis aenean et tortor at.</p>
+<p><img src="https://live.staticflickr.com/397/31445325431_981b759c23_h.jpg" alt="lorem photum"></p>
+<p>Laoreet non curabitur gravida arcu. Neque sodales ut etiam sit amet. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Ornare arcu dui vivamus arcu. Et leo duis ut diam quam nulla porttitor massa id. Diam sit amet nisl suscipit adipiscing bibendum est. Porttitor massa id neque aliquam vestibulum morbi blandit. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Dui ut ornare lectus sit amet est placerat in egestas. Vel elit scelerisque mauris pellentesque pulvinar.</p>
+<aside>Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Aenean pharetra magna ac placerat vestibulum lectus mauris.</aside>
+<p>Sit amet justo donec enim diam vulputate ut pharetra sit. Mi proin sed libero enim sed faucibus. Tortor at auctor urna nunc id cursus metus. In pellentesque massa placerat duis ultricies. Semper feugiat nibh sed pulvinar.</p>
+<p>Amet purus gravida quis blandit turpis cursus in hac. Natoque penatibus et magnis dis parturient montes nascetur. Tortor dignissim convallis aenean et tortor at. Eget est lorem ipsum dolor. Lectus nulla at volutpat diam ut venenatis tellus. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. At tellus at urna condimentum mattis pellentesque id. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Etiam tempor orci eu lobortis elementum nibh tellus. Integer enim neque volutpat ac.</p>
+<h3>Non blandit massa enim nec</h3>
+<p>Leo urna molestie at elementum eu facilisis. Vestibulum sed arcu non odio. Tortor aliquam nulla facilisi cras fermentum odio. Ante in nibh mauris cursus mattis molestie. Lacus sed viverra tellus in. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus. Non consectetur a erat nam at lectus urna duis convallis. Tortor dignissim convallis aenean et tortor at risus viverra adipiscing. Tincidunt id aliquet risus feugiat in ante. Aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus. Nec ultrices dui sapien eget. Ullamcorper a lacus vestibulum sed arcu. Et odio pellentesque diam volutpat commodo sed egestas. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Ipsum a arcu cursus vitae. Adipiscing elit duis tristique sollicitudin nibh sit. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Felis donec et odio pellentesque diam volutpat commodo. Eget nulla facilisi etiam dignissim diam quis.</p>
+<blockquote>
+<p>Mauris a diam maecenas sed enim ut sem viverra. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Cursus eget nunc scelerisque viverra. Id velit ut tortor pretium viverra suspendisse. Ultrices eros in cursus turpis. Quis hendrerit dolor magna eget est lorem ipsum dolor. Diam in arcu cursus euismod quis. Vitae suscipit tellus mauris a diam maecenas sed. Purus non enim praesent elementum facilisis leo vel. Porttitor massa id neque aliquam. Lectus urna duis convallis convallis tellus. Nunc consequat interdum varius sit amet mattis vulputate enim.</p>
+</blockquote>
+<p>Orci nulla pellentesque dignissim enim sit. Tincidunt vitae semper quis lectus nulla at volutpat. Molestie at elementum eu facilisis. In aliquam sem fringilla ut morbi tincidunt augue interdum. Dui nunc mattis enim ut tellus elementum. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Enim diam vulputate ut pharetra sit amet aliquam id. Volutpat est velit egestas dui id ornare. Eu mi bibendum neque egestas congue. Cras sed felis eget velit. Integer quis auctor elit sed vulputate mi sit amet mauris. Gravida rutrum quisque non tellus orci. Rutrum quisque non tellus orci ac <button>auctor</button>.</p>
+<h3>Tincidunt arcu non sodales</h3>
+<p>Neque sodales ut etiam sit. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Aliquet enim tortor at auctor urna nunc id. Turpis massa tincidunt dui ut ornare lectus sit amet. Id faucibus nisl tincidunt eget nullam non. Vitae ultricies leo integer malesuada nunc. Volutpat est velit egestas dui id ornare arcu odio ut. Cursus turpis massa tincidunt dui ut ornare. Neque aliquam vestibulum morbi blandit cursus risus at. Aenean vel elit scelerisque mauris. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Nibh tortor id aliquet lectus proin. Sagittis nisl rhoncus mattis rhoncus urna neque.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">loremFunction</span><span class="token punctuation">(</span><span class="token keyword">boolean</span> ipsum<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token constant">LOG</span><span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"Lorem ipsum begins"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Intent</span> sendIntent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sendIntent<span class="token punctuation">.</span><span class="token function">putExtra</span><span class="token punctuation">(</span><span class="token string">"lorem ipsum dolor"</span><span class="token punctuation">,</span> <span class="token string">"sit amet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Vel pharetra vel turpis nunc eget lorem dolor. Ut tellus elementum sagittis vitae et. Donec ultrices tincidunt arcu non sodales neque sodales. Dis parturient montes nascetur ridiculus <kbd>mus</kbd> mauris vitae. Pulvinar etiam non quam lacus suspendisse. Senectus et netus et malesuada. Sed viverra tellus in hac habitasse. Est sit amet facilisis magna etiam tempor orci eu lobortis.</p>
+<section>Ac turpis egestas integer eget. Euismod elementum nisi quis eleifend. Risus quis varius quam quisque id diam. Adipiscing elit ut aliquam purus sit amet. Tristique senectus et netus et malesuada fames ac. Fames ac turpis egestas sed tempus urna et pharetra. Vel pharetra vel turpis nunc eget lorem dolor. Augue eget arcu dictum varius duis at. Nibh tortor id aliquet lectus proin nibh.</section>
+<h2>Bibendum ut tristique</h2>
+<p>Et egestas quis ipsum suspendisse ultrices gravida. <mark>Est placerat in egestas</mark> erat imperdiet. Imperdiet dui accumsan sit amet nulla facilisi. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Aliquet risus feugiat in ante metus dictum at tempor. Vel pharetra vel turpis nunc eget lorem. Suscipit tellus mauris a diam maecenas. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Justo eget magna fermentum iaculis. Sed euismod nisi porta lorem mollis aliquam ut porttitor leo. Gravida rutrum quisque non tellus orci. Cursus metus aliquam eleifend mi in. Vulputate mi sit amet mauris commodo.</p>
+<p>Arcu odio ut sem nulla pharetra diam sit amet. Ipsum faucibus vitae aliquet nec ullamcorper sit. At imperdiet dui accumsan sit amet nulla facilisi. In nibh mauris cursus mattis molestie a iaculis at erat. Suspendisse in est ante in nibh. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Elit duis tristique sollicitudin nibh. Sagittis nisl rhoncus mattis rhoncus urna neque. Sit amet volutpat consequat mauris nunc. Eget nullam non nisi est sit amet. Et leo duis ut diam quam. Tincidunt arcu non sodales neque sodales ut. Auctor elit sed vulputate mi sit amet. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Cras adipiscing enim eu turpis. Placerat in egestas erat imperdiet. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor.</p>
+<div class="video">
+<iframe  src="https://www.youtube.com/embed/fop5YIk5iek?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</article>
+<footer>
+  <nav class="pagination">
+    <div class="">
+    </div>
+
+    <div class="next">
+      <a href="/posts/2024/markdown-syntax/">
+        <strong>Markdown Syntax Guide ›</strong></a
+      >
+      
+    </div>
+  </nav>
+</footer>
+
+
+    </main>
+    <hr />
+<footer>
+  Made with <span role="img" aria-label="Love">♥</span> with
+  <a href="https://www.11ty.dev/">Eleventy</a>
+  <br />
+
+  Subscribe to my <a href="/feed/feed.xml">RSS Feed</a>&nbsp;<img
+    src="/images/rss-512.png"
+    class="img-txt"
+  />
+</footer>
+
+  </body>
+</html>
