@@ -1,80 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Eleventy Starter Blog</title>
-<meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements." />
-<meta name="keywords" content="eleventy,blog,theme,template,starter" />
+<meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+<meta name="keywords" content="eleventy,blog,theme,template,starter">
 
 <!-- Favicons -->
 
-<link
-  rel="apple-touch-icon"
-  sizes="76x76"
-  href="/favicons/apple-touch-icon.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="/favicons/favicon-32x32.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="/favicons/favicon-16x16.png"
-/>
-<link rel="manifest" href="/favicons/site.webmanifest" />
-<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
-<meta name="msapplication-TileColor" content="#da532c" />
-<meta name="theme-color" content="#ffffff" />
+<link rel="apple-touch-icon" sizes="76x76" href="/11ty-tech-blog/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/11ty-tech-blog/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/11ty-tech-blog/favicons/favicon-16x16.png">
+<link rel="manifest" href="/11ty-tech-blog/favicons/site.webmanifest">
+<link rel="mask-icon" href="/11ty-tech-blog/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
 <!-- Open Graph -->
-<meta property="og:site_name" content="Eleventy Starter Blog" />
-<meta property="og:title" content="Markdown Syntax Guide" />
-<meta
-  property="og:description"
-  content="Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-/>
-<meta property="og:url" content="https://example.com" />
-<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Eleventy Starter Blog">
+<meta property="og:title" content="Markdown Syntax Guide">
+<meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+<meta property="og:url" content="https://example.com">
+<meta property="og:type" content="website">
 
-<meta name="generator" content="Eleventy v2.0.1" />
+<meta name="generator" content="Eleventy v2.0.1">
 
-<link rel="stylesheet" href="/css/index.css" />
-<link
-  href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css"
-  rel="stylesheet"
-/>
+<link rel="stylesheet" href="/11ty-tech-blog/css/index.css">
+<link href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
 
 <!-- Feeds -->
-<link
-  rel="alternate"
-  href="/feed/atom.xml"
-  type="application/atom+xml"
-  title="Eleventy Starter Blog"
-/>
-<link
-  rel="alternate"
-  href="/feed/rss.xml"
-  type="application/rss+xml"
-  title="Eleventy Starter Blog"
-/>
-<link
-  rel="alternate"
-  href="/feed/feed.json"
-  type="application/json"
-  title="Eleventy Starter Blog"
-/>
+<link rel="alternate" href="/11ty-tech-blog/feed/atom.xml" type="application/atom+xml" title="Eleventy Starter Blog">
+<link rel="alternate" href="/11ty-tech-blog/feed/rss.xml" type="application/rss+xml" title="Eleventy Starter Blog">
+<link rel="alternate" href="/11ty-tech-blog/feed/feed.json" type="application/json" title="Eleventy Starter Blog">
 
 <!-- LD+JSON -->
 
 
-<meta property="article:published_time" content="Tue Mar 16 2021 00:00:00 GMT+0000 (Coordinated Universal Time)" />
+<meta property="article:published_time" content="Tue Mar 16 2021 00:00:00 GMT+0000 (Coordinated Universal Time)">
 
 <script type="application/ld+json">
   {
@@ -85,7 +50,7 @@
     "image": "",
     "author": "Me",
     "keywords": "markdown css html",
-    "url": "https://example.com/posts/2024/markdown-syntax/",
+    "url": "https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/",
     "datePublished": "Tue Mar 16 2021 00:00:00 GMT+0000 (Coordinated Universal Time)",
     "dateCreated": "Tue Mar 16 2021 00:00:00 GMT+0000 (Coordinated Universal Time)",
     "dateModified": "Tue Mar 16 2021 00:00:00 GMT+0000 (Coordinated Universal Time)",
@@ -163,28 +128,26 @@
       <nav>
   <ul>
     <li>
-      <strong><a href="/">Home</a></strong>
+      <strong><a href="/11ty-tech-blog/">Home</a></strong>
     </li>
     <li>
-      <strong><a href="/archive/">Archive</a></strong>
+      <strong><a href="/11ty-tech-blog/archive/">Archive</a></strong>
     </li>
     <li>
-      <strong><a href="/tags/">Tags</a></strong>
+      <strong><a href="/11ty-tech-blog/tags/">Tags</a></strong>
     </li>
     <li>
-      <strong><a href="/about/">About</a></strong>
+      <strong><a href="/11ty-tech-blog/about/">About</a></strong>
     </li>
   </ul>
   <i id="toggle-color-scheme" class="svgs">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
       <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-      <path
-        d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
-      />
+      <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"></path>
     </svg>
   </i>
 </nav>
-<hr />
+<hr>
 
     </header>
     <main class="content">
@@ -194,13 +157,13 @@
   <ul class="list-horizontal">
     <time>March 16, 2021</time>
     <li class="page-tag">
-      <a href="/tags/markdown/" class="post-tag">markdown</a>
+      <a href="/11ty-tech-blog/tags/markdown/" class="post-tag">markdown</a>
     </li>
     <li class="page-tag">
-      <a href="/tags/css/" class="post-tag">css</a>
+      <a href="/11ty-tech-blog/tags/css/" class="post-tag">css</a>
     </li>
     <li class="page-tag">
-      <a href="/tags/html/" class="post-tag">html</a>
+      <a href="/11ty-tech-blog/tags/html/" class="post-tag">html</a>
     </li>
   </ul>
   <h1>Markdown Syntax Guide</h1>
@@ -295,16 +258,14 @@
 <footer>
   <nav class="pagination">
     <div class="prev">
-      <a href="/posts/2024/lorem-ipsum/">
-        <strong>‹ Customary Lorem Ipsum post</strong></a
-      >
+      <a href="/11ty-tech-blog/posts/2024/lorem-ipsum/">
+        <strong>‹ Customary Lorem Ipsum post</strong></a>
       
     </div>
 
     <div class="next">
-      <a href="/posts/2024/markdown-syntax-2/">
-        <strong>Markdown Syntax Guide Part 2 ›</strong></a
-      >
+      <a href="/11ty-tech-blog/posts/2024/markdown-syntax-2/">
+        <strong>Markdown Syntax Guide Part 2 ›</strong></a>
       
     </div>
   </nav>
@@ -312,16 +273,13 @@
 
 
     </main>
-    <hr />
+    <hr>
 <footer>
   Made with <span role="img" aria-label="Love">♥</span> with
   <a href="https://www.11ty.dev/">Eleventy</a>
-  <br />
+  <br>
 
-  Subscribe to my <a href="/feed/feed.xml">RSS Feed</a>&nbsp;<img
-    src="/images/rss-512.png"
-    class="img-txt"
-  />
+  Subscribe to my <a href="/11ty-tech-blog/feed/feed.xml">RSS Feed</a>&nbsp;<img src="/11ty-tech-blog/images/rss-512.png" class="img-txt">
 </footer>
 
   </body>

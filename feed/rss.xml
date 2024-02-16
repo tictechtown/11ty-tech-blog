@@ -34,7 +34,7 @@ last_modified_at: 2022-08-17
 &lt;p&gt;Anyway, the date appears at the bottom.&lt;/p&gt;
 &lt;p&gt;👇&lt;/p&gt;
 </description>
-      <pubDate>Fri, 16 Feb 2024 00:33:25 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2024 00:49:00 +0000</pubDate>
       <dc:creator>&lt;Author Name&gt;</dc:creator>
       <guid>https://example.com/posts/tutorial/post-date/</guid>
     </item>
@@ -71,7 +71,7 @@ opengraph:
 &lt;h3&gt;Author and type&lt;/h3&gt;
 &lt;p&gt;The author and type are always taken from the metadata.json author and type.&lt;/p&gt;
 </description>
-      <pubDate>Fri, 16 Feb 2024 00:33:25 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2024 00:49:00 +0000</pubDate>
       <dc:creator>&lt;Author Name&gt;</dc:creator>
       <guid>https://example.com/posts/tutorial/opengraph/</guid>
     </item>
@@ -121,7 +121,7 @@ This is a danger notice. **Smoking is fatal**.
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-      <pubDate>Fri, 16 Feb 2024 00:33:25 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2024 00:49:00 +0000</pubDate>
       <dc:creator>&lt;Author Name&gt;</dc:creator>
       <guid>https://example.com/posts/tutorial/notice/</guid>
     </item>
