@@ -3,7 +3,7 @@ name: Build Eleventy
 on:
   push:
     branches:
-      - main
+      - test/gh-page
 
 jobs:
   build:
@@ -33,4 +33,4 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           publish_dir: ./_site
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
