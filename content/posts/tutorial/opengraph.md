@@ -57,3 +57,7 @@ If missing, the defaults are taken from the `metadata.json` again.
 ### Author and type
 
 The author and type are always taken from the metadata.json author and type.
+
+## Testing your OpenGraph Metadata
+
+You can go to the [opengraph.xyz](https://www.opengraph.xyz/) website, enter your published URL and see if there's any issue.

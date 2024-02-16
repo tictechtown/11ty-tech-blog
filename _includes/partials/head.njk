@@ -42,7 +42,10 @@
   property="og:type"
   content="{{ opengraph.type or metadata.opengraph.type }}"
 />
-<meta property="og:image" content="{{ opengraph.image or metadata.url }}" />
+<meta
+  property="og:image"
+  content="{{ opengraph.image or metadata.opengraph.image }}"
+/>
 
 <meta name="generator" content="{{ eleventy.generator }}" />
 
