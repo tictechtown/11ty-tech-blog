@@ -96,11 +96,8 @@
 
   // Get the current scheme, and apply the opposite
   function toggleColorScheme() {
-    let newScheme = "light"
-    let scheme = getPreferredColorScheme()
-    if (scheme === "light") {
-      newScheme = "dark"
-    }
+    const currentScheme = getPreferredColorScheme()
+    const newScheme = currentScheme === "light" ? "dark" : "light"
 
     applyPreferredColorScheme(newScheme)
     savePreferredColorScheme(newScheme)
