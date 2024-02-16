@@ -17,6 +17,8 @@ module.exports = function (eleventyConfig) {
   // For example, `./public/css/` ends up in `_site/css/`
   eleventyConfig.addPassthroughCopy({
     public: "/",
+    // Note - update your codeblock theme here
+    "./node_modules/prismjs/themes/prism-tomorrow.min.css": "/css/prism.css",
   });
 
   // plugins
