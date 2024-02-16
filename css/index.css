@@ -23,7 +23,7 @@
     --visited-color: #8b6fcb;
     --code-background-color: #2d2d2d;
     --code-color: #ddd;
-    --code-border-color: #e8e8e8;
+    --code-border-color: slategray;
     --blockquote-color: #ccc;
   }
 }
@@ -48,7 +48,7 @@
   --visited-color: #8b6fcb;
   --code-background-color: #2d2d2d;
   --code-color: #ddd;
-  --code-border-color: #e8e8e8;
+  --code-border-color: slategray;
   --blockquote-color: #ccc;
 }
 
@@ -267,4 +267,29 @@ video,
 .video {
   width: 100%;
   aspect-ratio: 16/9;
+}
+
+aside,
+.notice {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-left: 0.25em solid royalblue;
+  border-radius: 2px;
+  background-color: var(--code-background-color);
+}
+
+.success {
+  border-left-color: green;
+}
+
+.info {
+  border-left-color: slategray;
+}
+
+.warning {
+  border-left-color: yellow;
+}
+
+.danger {
+  border-left-color: orangered;
 }
