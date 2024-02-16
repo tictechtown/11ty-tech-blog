@@ -50,7 +50,7 @@
 />
 <meta
   property="og:image"
-  content="{{ opengraph.image or metadata.opengraph.image }}"
+  content="{{ opengraph.image or metadata.opengraph.image | url}}"
 />
 
 <meta name="generator" content="{{ eleventy.generator }}" />
