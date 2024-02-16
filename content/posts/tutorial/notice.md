@@ -31,40 +31,46 @@ This is a danger notice. **Smoking is fatal**.
 
 For a regular notice box,
 
+<!-- prettier-ignore-start -->
+
+```html
+<div class="notice">This is the default notice. You _can_ use Markdown.</div>
 ```
-{% raw %}<div class="notice">
-This is the default notice. You _can_ use Markdown.
-</div>{% endraw %}
-```
+<!-- prettier-ignore-end -->
 
 For an info notice box,
 
+<!-- prettier-ignore-start -->
+
+```html
+<div class="notice info">
+  This is an info notice. Info means
+  [information](https://en.wikipedia.org/wiki/Information)
+</div>
 ```
-{% raw %}<div class="notice info">
-This is an info notice. Info means [information](https://en.wikipedia.org/wiki/Information)
-</div>{% endraw %}
-```
+<!-- prettier-ignore-end -->
 
 For a success notice box,
 
-```
-{% raw %}<div class="notice success">
-This is a success notice. Great Success.
-</div>{% endraw %}
-```
+<!-- prettier-ignore-start -->
+```html
+<div class="notice success">This is a success notice. Great Success.</div>
+````
 
-For a warning notice box,
+<!-- prettier-ignore-end -->
 
-```
-{% raw %}<div class="notice warning">
-This is a warning notice.  Don't use `GOTO` statements!
-</div>{% endraw %}
+```html
+{% raw %}
+<div class="notice warning">
+  This is a warning notice. Don't use `GOTO` statements!
+</div>
+{% endraw %}
 ```
 
 For a danger notice box,
 
-```
-{% raw %}<div class="notice danger">
-This is a danger notice. **Smoking is fatal**.
-</div>{% endraw %}
+```html
+{% raw %}
+<div class="notice danger">This is a danger notice. **Smoking is fatal**.</div>
+{% endraw %}
 ```

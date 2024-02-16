@@ -16,7 +16,7 @@ Surround code with 3 backticks to produce a code block.
 
 For instance,
 
-````
+````markdown
 ```
 console.log('hello');
 ```
@@ -84,4 +84,8 @@ if ! [ -x "$(command -v jq)" ]; then
     message "JQ not installed. Installing..."
     sudo apt -y install jq
 fi
+```
+
+```
+
 ```
