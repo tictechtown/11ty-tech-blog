@@ -7,38 +7,6 @@
     <description></description>
     <language>en</language>
     <item>
-      <title>How to set the date of a post</title>
-      <link>https://example.com/posts/tutorial/post-date/</link>
-      <description>&lt;p&gt;When writing a new post, you can set the date of the post in a few different ways. The date of the post determines the order it appears in the post listings.&lt;/p&gt;
-&lt;h3&gt;In the filename&lt;/h3&gt;
-&lt;p&gt;The date can be set in the post&#39;s filename. For example, &lt;code&gt;./content/posts/tutorial/post-date.md&lt;/code&gt; will be published to the URL &lt;code&gt;/posts/tutorial/post-date/&lt;/code&gt; and the date appears as &lt;code&gt;February 16, 2024&lt;/code&gt;. This is the best way to write posts, since having the date at the beginning helps organize the posts in order.&lt;/p&gt;
-&lt;h3&gt;In the frontmatter&lt;/h3&gt;
-&lt;p&gt;The date can also be set in the page&#39;s frontmatter.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: How to set the date of a post
-date: 2022-02-02
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Both the file name &lt;em&gt;and&lt;/em&gt; the frontmatter&lt;/h3&gt;
-&lt;p&gt;If the date is set both in the file name as well as the frontmatter, the frontmatter date takes precedence.&lt;/p&gt;
-&lt;h3&gt;Setting a last modified date for a post&lt;/h3&gt;
-&lt;p&gt;Setting the &lt;code&gt;last_modified_at&lt;/code&gt; in the frontmatter modifies the display and metadata date, but without changing its order in the listing.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: How to set the date of a post
-last_modified_at: 2022-08-17
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Posts without a date&lt;/h3&gt;
-&lt;p&gt;If there&#39;s no date in the file name, or the frontmatter, then the date defaults to the time of build, so it gets updated each time the site is built.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;Anyway, the date appears at the bottom.&lt;/p&gt;
-&lt;p&gt;👇&lt;/p&gt;
-</description>
-      <pubDate>Fri, 16 Feb 2024 02:06:49 +0000</pubDate>
-      <dc:creator>&lt;Author Name&gt;</dc:creator>
-      <guid>https://example.com/posts/tutorial/post-date/</guid>
-    </item>
-    <item>
       <title>How to set Opengraph preview image and metadata</title>
       <link>https://example.com/posts/tutorial/opengraph/</link>
       <description>&lt;p&gt;When sharing a URL, some sites will generate a preview with a title, description and image using certain &lt;a href=&quot;https://ogp.me/&quot;&gt;OpenGraph&lt;/a&gt; metadata.&lt;/p&gt;
@@ -71,7 +39,7 @@ opengraph:
 &lt;h3&gt;Author and type&lt;/h3&gt;
 &lt;p&gt;The author and type are always taken from the metadata.json author and type.&lt;/p&gt;
 </description>
-      <pubDate>Fri, 16 Feb 2024 02:06:49 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2024 20:26:56 +0000</pubDate>
       <dc:creator>&lt;Author Name&gt;</dc:creator>
       <guid>https://example.com/posts/tutorial/opengraph/</guid>
     </item>
@@ -120,7 +88,7 @@ This is a danger notice. **Smoking is fatal**.
 &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;notice danger&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;This is a danger notice. **Smoking is fatal**.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-      <pubDate>Fri, 16 Feb 2024 02:06:49 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2024 20:26:56 +0000</pubDate>
       <dc:creator>&lt;Author Name&gt;</dc:creator>
       <guid>https://example.com/posts/tutorial/notice/</guid>
     </item>
@@ -545,6 +513,44 @@ upr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gets&lt;span cla
       <pubDate>Thu, 05 Jan 2023 00:00:00 +0000</pubDate>
       <dc:creator>&lt;Author Name&gt;</dc:creator>
       <guid>https://example.com/posts/tutorial/code/</guid>
+    </item>
+    <item>
+      <title>How to set the date of a post</title>
+      <link>https://example.com/posts/tutorial/2022-08-15-post-date/</link>
+      <description>&lt;p&gt;When writing a new post, you can set the date of the post in a few different ways. The date of the post determines the order it appears in the post listings.&lt;/p&gt;
+&lt;h3&gt;In the filename&lt;/h3&gt;
+&lt;p&gt;The date can be set in the post&#39;s filename. For example, &lt;code&gt;./content/posts/tutorial/2022-08-15-post-date.md&lt;/code&gt; will be published to the URL &lt;code&gt;/posts/tutorial/2022-08-15-post-date/&lt;/code&gt; and the date appears as &lt;code&gt;August 15, 2022&lt;/code&gt;. This is the best way to write posts, since having the date at the beginning helps organize the posts in order.&lt;/p&gt;
+&lt;h3&gt;In the frontmatter&lt;/h3&gt;
+&lt;p&gt;The date can also be set in the page&#39;s frontmatter.&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: How to set the date of a post
+date: 2024-02-02&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Both the file name &lt;em&gt;and&lt;/em&gt; the frontmatter&lt;/h3&gt;
+&lt;p&gt;If the date is set both in the file name as well as the frontmatter, the frontmatter date takes precedence.&lt;/p&gt;
+&lt;h3&gt;Setting a last modified date for a post&lt;/h3&gt;
+&lt;p&gt;Setting the &lt;code&gt;updated&lt;/code&gt; in the frontmatter modifies the display and metadata date, but without changing its order in the listing.&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: How to set the date of a post
+updated: 2022-08-20&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is &lt;strong&gt;not&lt;/strong&gt; the standard for 11ty and created just for this template.&lt;/p&gt;
+&lt;h3&gt;Posts without a date&lt;/h3&gt;
+&lt;p&gt;If there&#39;s no date in the file name, or the frontmatter, then the date defaults to the time of build, so it gets updated each time the site is built.
+If you don&#39;t have a build process and serve it locally, it uses the filesystem to determine when the file was last updated/created.&lt;/p&gt;
+&lt;h2&gt;Recommendations&lt;/h2&gt;
+&lt;p&gt;My recommendation is putting the date in the filename like &lt;code&gt;./content/posts/tutorial/2022-08-15-post-date.md&lt;/code&gt;, or use a sub-folder, like &lt;code&gt;2022-08-15/post-date.md&lt;/code&gt;.
+It will be easier for you to figure out, using any filesystem, to sort your posts, instead of having a &amp;quot;mess&amp;quot; (i.e unordered list) of articles.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Anyway, the date appears at the top of the post ☝️&lt;/p&gt;
+&lt;h4&gt;Links&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.11ty.dev/docs/dates/&quot;&gt;11ty Date Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Mon, 15 Aug 2022 00:00:00 +0000</pubDate>
+      <dc:creator>&lt;Author Name&gt;</dc:creator>
+      <guid>https://example.com/posts/tutorial/2022-08-15-post-date/</guid>
     </item>
     <item>
       <title>Markdown Syntax Guide Part 2</title>

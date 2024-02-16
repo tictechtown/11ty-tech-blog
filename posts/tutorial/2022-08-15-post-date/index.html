@@ -39,7 +39,7 @@
 <!-- LD+JSON -->
 
 
-<meta property="article:published_time" content="Fri Feb 16 2024 02:06:49 GMT+0000 (Coordinated Universal Time)">
+<meta property="article:published_time" content="Mon Aug 15 2022 00:00:00 GMT+0000 (Coordinated Universal Time)">
 
 <script type="application/ld+json">
   {
@@ -50,10 +50,10 @@
     "image": "",
     "author": "&lt;Author Name&gt;",
     "keywords": "",
-    "url": "https://example.com/11ty-tech-blog/posts/tutorial/post-date/",
-    "datePublished": "Fri Feb 16 2024 02:06:49 GMT+0000 (Coordinated Universal Time)",
-    "dateCreated": "Fri Feb 16 2024 02:06:49 GMT+0000 (Coordinated Universal Time)",
-    "dateModified": "Fri Feb 16 2024 02:06:49 GMT+0000 (Coordinated Universal Time)",
+    "url": "https://example.com/11ty-tech-blog/posts/tutorial/2022-08-15-post-date/",
+    "datePublished": "Mon Aug 15 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "dateCreated": "Mon Aug 15 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "dateModified": "Mon Aug 15 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
     "description": "",
     
     
@@ -155,46 +155,58 @@
 
 <header>
   <ul class="list-horizontal">
-    <time>February 16, 2024</time>
+    <time>August 15, 2022</time>
   </ul>
+  
+  <time>Updated February 1, 2024</time>
+  
   <h1>How to set the date of a post</h1>
 </header>
 
  
 <article><p>When writing a new post, you can set the date of the post in a few different ways. The date of the post determines the order it appears in the post listings.</p>
 <h3>In the filename</h3>
-<p>The date can be set in the post's filename. For example, <code>./content/posts/tutorial/post-date.md</code> will be published to the URL <code>/posts/tutorial/post-date/</code> and the date appears as <code>February 16, 2024</code>. This is the best way to write posts, since having the date at the beginning helps organize the posts in order.</p>
+<p>The date can be set in the post's filename. For example, <code>./content/posts/tutorial/2022-08-15-post-date.md</code> will be published to the URL <code>/posts/tutorial/2022-08-15-post-date/</code> and the date appears as <code>August 15, 2022</code>. This is the best way to write posts, since having the date at the beginning helps organize the posts in order.</p>
 <h3>In the frontmatter</h3>
 <p>The date can also be set in the page's frontmatter.</p>
-<pre><code>---
-title: How to set the date of a post
-date: 2022-02-02
----
-</code></pre>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: How to set the date of a post
+date: 2024-02-02</span>
+<span class="token punctuation">---</span></span></code></pre>
 <h3>Both the file name <em>and</em> the frontmatter</h3>
 <p>If the date is set both in the file name as well as the frontmatter, the frontmatter date takes precedence.</p>
 <h3>Setting a last modified date for a post</h3>
-<p>Setting the <code>last_modified_at</code> in the frontmatter modifies the display and metadata date, but without changing its order in the listing.</p>
-<pre><code>---
-title: How to set the date of a post
-last_modified_at: 2022-08-17
----
-</code></pre>
+<p>Setting the <code>updated</code> in the frontmatter modifies the display and metadata date, but without changing its order in the listing.</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: How to set the date of a post
+updated: 2022-08-20</span>
+<span class="token punctuation">---</span></span></code></pre>
+<p>This is <strong>not</strong> the standard for 11ty and created just for this template.</p>
 <h3>Posts without a date</h3>
-<p>If there's no date in the file name, or the frontmatter, then the date defaults to the time of build, so it gets updated each time the site is built.</p>
+<p>If there's no date in the file name, or the frontmatter, then the date defaults to the time of build, so it gets updated each time the site is built.
+If you don't have a build process and serve it locally, it uses the filesystem to determine when the file was last updated/created.</p>
+<h2>Recommendations</h2>
+<p>My recommendation is putting the date in the filename like <code>./content/posts/tutorial/2022-08-15-post-date.md</code>, or use a sub-folder, like <code>2022-08-15/post-date.md</code>.
+It will be easier for you to figure out, using any filesystem, to sort your posts, instead of having a &quot;mess&quot; (i.e unordered list) of articles.</p>
 <hr>
-<p>Anyway, the date appears at the bottom.</p>
-<p>👇</p>
+<p>Anyway, the date appears at the top of the post ☝️</p>
+<h4>Links</h4>
+<ul>
+<li><a href="https://www.11ty.dev/docs/dates/">11ty Date Documentation</a></li>
+</ul>
 </article>
 <footer>
   <nav class="pagination">
     <div class="prev">
-      <a href="/11ty-tech-blog/posts/tutorial/opengraph/">
-        <strong>‹ How to set Opengraph preview image and metadata</strong></a>
+      <a href="/11ty-tech-blog/posts/2024/markdown-syntax-2/">
+        <strong>‹ Markdown Syntax Guide Part 2</strong></a>
       
     </div>
 
-    <div class="">
+    <div class="next">
+      <a href="/11ty-tech-blog/posts/tutorial/code/">
+        <strong>Post with some code blocks ›</strong></a>
+      
     </div>
   </nav>
 </footer>
