@@ -39,7 +39,7 @@
 <!-- LD+JSON -->
 
 
-<meta property="article:published_time" content="Fri Feb 16 2024 01:31:19 GMT+0000 (Coordinated Universal Time)">
+<meta property="article:published_time" content="Fri Feb 16 2024 02:06:49 GMT+0000 (Coordinated Universal Time)">
 
 <script type="application/ld+json">
   {
@@ -51,9 +51,9 @@
     "author": "&lt;Author Name&gt;",
     "keywords": "notice",
     "url": "https://example.com/11ty-tech-blog/posts/tutorial/notice/",
-    "datePublished": "Fri Feb 16 2024 01:31:19 GMT+0000 (Coordinated Universal Time)",
-    "dateCreated": "Fri Feb 16 2024 01:31:19 GMT+0000 (Coordinated Universal Time)",
-    "dateModified": "Fri Feb 16 2024 01:31:19 GMT+0000 (Coordinated Universal Time)",
+    "datePublished": "Fri Feb 16 2024 02:06:49 GMT+0000 (Coordinated Universal Time)",
+    "dateCreated": "Fri Feb 16 2024 02:06:49 GMT+0000 (Coordinated Universal Time)",
+    "dateModified": "Fri Feb 16 2024 02:06:49 GMT+0000 (Coordinated Universal Time)",
     "description": "I want to display what notice boxes would look like.",
     
     
@@ -182,36 +182,35 @@ This is a warning notice. Don't use `GOTO` statements!
 This is a danger notice. **Smoking is fatal**.
 </div>
 <p>For a regular notice box,</p>
-<pre><code>&lt;div class=&quot;notice&quot;&gt;
-This is the default notice. You _can_ use Markdown.
-&lt;/div&gt;
-</code></pre>
+<!-- prettier-ignore-start -->
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notice<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This is the default notice. You _can_ use Markdown.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<!-- prettier-ignore-end -->
 <p>For an info notice box,</p>
-<pre><code>&lt;div class=&quot;notice info&quot;&gt;
-This is an info notice. Info means [information](https://en.wikipedia.org/wiki/Information)
-&lt;/div&gt;
-</code></pre>
+<!-- prettier-ignore-start -->
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notice info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  This is an info notice. Info means
+  [information](https://en.wikipedia.org/wiki/Information)
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<!-- prettier-ignore-end -->
 <p>For a success notice box,</p>
-<pre><code>&lt;div class=&quot;notice success&quot;&gt;
-This is a success notice. Great Success.
-&lt;/div&gt;
-</code></pre>
-<p>For a warning notice box,</p>
-<pre><code>&lt;div class=&quot;notice warning&quot;&gt;
-This is a warning notice.  Don't use `GOTO` statements!
-&lt;/div&gt;
+<!-- prettier-ignore-start -->
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notice success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This is a success notice. Great Success.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<!-- prettier-ignore-end -->
+<pre class="language-html"><code class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notice warning<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  This is a warning notice. Don't use `GOTO` statements!
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>For a danger notice box,</p>
-<pre><code>&lt;div class=&quot;notice danger&quot;&gt;
-This is a danger notice. **Smoking is fatal**.
-&lt;/div&gt;
+<pre class="language-html"><code class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notice danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This is a danger notice. **Smoking is fatal**.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </article>
 <footer>
   <nav class="pagination">
     <div class="prev">
-      <a href="/11ty-tech-blog/posts/tutorial/code/">
-        <strong>‹ Post with some code blocks</strong></a>
+      <a href="/11ty-tech-blog/posts/tutorial/syntax/">
+        <strong>‹ Code Blocks Theme</strong></a>
       
     </div>
 

@@ -101,17 +101,24 @@ img {
   max-width: 100%;
 }
 
+pre {
+  background-color: var(--code-background-color);
+}
+
 code {
   font-family: monospace;
   padding: 2px;
   background-color: var(--code-background-color);
   color: var(--code-color);
   border-radius: 3px;
+  overflow-x: auto;
 }
 
 blockquote {
   border-left: 1px solid #999;
   color: var(--code-color);
+  background-color: var(--code-background-color);
+
   padding-left: 20px;
   font-style: italic;
 }
@@ -138,7 +145,7 @@ main footer {
 }
 
 .highlight,
-.code {
+.code:not(.code) {
   padding: 1px 15px;
   background-color: var(--code-background-color);
   color: var(--code-color);
