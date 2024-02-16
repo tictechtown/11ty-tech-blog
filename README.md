@@ -28,7 +28,7 @@ npm run serve # or run
 
 ## Demos
 
-- [GitHub Pages] TODO
+- [GitHub Pages] [https://tictechtown.github.io/11ty-tech-blog/](https://tictechtown.github.io/11ty-tech-blog/)
 
 ## Deploy this to your own site
 
