@@ -6,7 +6,6 @@ layout: layouts/base.njk
 <header>
   <ul class="list-horizontal">
     <time>{{ page.date | readableDate }}</time>
-
     {%- for tag in tags | filterTagList %} {%- set tagUrl %}/tags/{{ tag |
     slugify }}/{% endset %}
     <li class="page-tag">
@@ -14,6 +13,9 @@ layout: layouts/base.njk
     </li>
     {%- endfor %}
   </ul>
+  {% if modified %}
+  <time>Updated {{ modified | readableDate }}</time>
+  {% endif %}
   <h1>{{ title }}</h1>
 </header>
 
