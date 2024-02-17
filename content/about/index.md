@@ -11,6 +11,8 @@ I am a person that writes stuff.
 
 Here's a picture of me:
 
+![Placeholder Developer Picture]({{ "./profile-picture.jpg" | localImageUrl }})
+
 ## Open Source Projects
 
 - stuff 1
