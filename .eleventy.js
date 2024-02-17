@@ -95,7 +95,7 @@ module.exports = function (eleventyConfig) {
     async function (src, callback) {
       let file = relativeToInputPath(this.page.inputPath, src);
       let metadata = await eleventyImage(file, {
-        outputDir: path.join(eleventyConfig.dir.output, "images"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+        outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
       });
 
       if (metadata.jpeg) {
