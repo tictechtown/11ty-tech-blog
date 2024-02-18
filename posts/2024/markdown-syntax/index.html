@@ -138,7 +138,10 @@
     <li>
       <strong><a href="/11ty-tech-blog/about/">About</a></strong>
     </li>
-    <a href="/11ty-tech-blog/feed/rss.xml">
+  </ul>
+
+  <div>
+    <a href="/11ty-tech-blog/feed/rss.xml" aria-label="Subscribe to the RSS feed">
       <i class="svgs">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -146,13 +149,14 @@
         </svg>
       </i>
     </a>
-  </ul>
-  <i id="toggle-color-scheme" class="svgs">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-      <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-      <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"></path>
-    </svg>
-  </i>
+
+    <i id="toggle-color-scheme" class="svgs">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"></path>
+      </svg>
+    </i>
+  </div>
 </nav>
 <hr>
 
@@ -161,8 +165,9 @@
       
 
 <header>
+  <time>Posted on March 16, 2021</time>
+  
   <ul class="list-horizontal">
-    <time>March 16, 2021</time>
     <li class="page-tag">
       <a href="/11ty-tech-blog/tags/markdown/" class="post-tag">markdown</a>
     </li>
@@ -173,7 +178,6 @@
       <a href="/11ty-tech-blog/tags/html/" class="post-tag">html</a>
     </li>
   </ul>
-  
   <h1>Markdown Syntax Guide</h1>
 </header>
 
@@ -204,6 +208,9 @@
 — <cite>Rob Pike[^1]</cite></p>
 </blockquote>
 <p>[^1]: The above quote is excerpted from Rob Pike's <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">talk</a> during Gopherfest, November 18, 2015.</p>
+<aside>
+This doesn't work for now, you should add a plugin for `markdown-it`, or write your own. This one seems popular, [markdown-it-attribution](https://github.com/dweidner/markdown-it-attribution)
+</aside>
 <h2>Code Blocks</h2>
 <h4>Code block with backticks</h4>
 <pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
@@ -272,8 +279,8 @@
     </div>
 
     <div class="next">
-      <a href="/11ty-tech-blog/posts/2024/markdown-syntax-2/">
-        <strong>Markdown Syntax Guide Part 2 ›</strong></a>
+      <a href="/11ty-tech-blog/posts/tutorial/2022-08-15-post-date/">
+        <strong>How to set the date of a post ›</strong></a>
       
     </div>
   </nav>
