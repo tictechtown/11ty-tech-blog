@@ -6,8 +6,8 @@
   --background-color: #fff;
   --heading-color: #222;
   --text-color: #444;
-  --link-color: #3273dc;
-  --visited-color: #8b6fcb;
+  --link-color: #3b49df;
+  --visited-color: #6141b4;
   --code-background-color: #f2f2f2;
   --code-color: #222;
   --code-border-color: #ccc;
@@ -19,7 +19,7 @@
     --background-color: #01242e;
     --heading-color: #eee;
     --text-color: #ddd;
-    --link-color: #8cc2dd;
+    --link-color: #3bb2ed;
     --visited-color: #8b6fcb;
     --code-background-color: #2d2d2d;
     --code-color: #ddd;
@@ -32,8 +32,8 @@
   --background-color: #fff;
   --heading-color: #222;
   --text-color: #444;
-  --link-color: #3273dc;
-  --visited-color: #8b6fcb;
+  --link-color: #3b49df;
+  --visited-color: #6141b4;
   --code-background-color: #f2f2f2;
   --code-color: #222;
   --code-border-color: #ccc;
@@ -44,7 +44,7 @@
   --background-color: #01242e;
   --heading-color: #eee;
   --text-color: #ddd;
-  --link-color: #8cc2dd;
+  --link-color: #3bb2ed;
   --visited-color: #8b6fcb;
   --code-background-color: #2d2d2d;
   --code-color: #ddd;
@@ -84,6 +84,7 @@ a {
   color: var(--link-color);
   cursor: pointer;
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
@@ -122,7 +123,7 @@ img {
 
 pre {
   background-color: var(--code-background-color);
-  padding: 1em;
+  padding: 1.5em;
   margin: 0.5em 0;
   overflow: auto;
 }
@@ -138,12 +139,12 @@ p code {
 }
 
 blockquote {
-  border-left: 1px solid #999;
+  border-left: 4px solid #d6d6d7;
   color: var(--code-color);
-  background-color: var(--code-background-color);
-  padding-left: 20px;
+  /* background-color: var(--code-background-color); */
+  padding-left: 1.5em;
   font-style: italic;
-  margin-left: 1em;
+  margin: 1em 0;
 }
 
 footer {
@@ -165,16 +166,6 @@ main footer {
 
 .inline {
   width: auto !important;
-}
-
-.highlight {
-  padding: 1px 15px;
-  background-color: var(--code-background-color);
-  color: var(--code-color);
-  border-radius: 3px;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  overflow-x: auto;
 }
 
 /* blog post list */
@@ -204,6 +195,10 @@ nav ul,
 nav ul li,
 .list-horizontal li {
   display: inline-block;
+}
+
+header > .list-horizontal {
+  margin-top: 0;
 }
 
 nav {

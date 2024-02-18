@@ -51,6 +51,10 @@ The blockquote element represents content that is quoted from another source, op
 
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
+<aside>
+This doesn't work for now, you should add a plugin for `markdown-it`, or write your own. This one seems popular, [markdown-it-attribution](https://github.com/dweidner/markdown-it-attribution)
+</aside>
+
 ## Code Blocks
 
 #### Code block with backticks

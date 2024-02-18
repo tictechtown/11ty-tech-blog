@@ -4,8 +4,11 @@ layout: layouts/base.njk
 
 {% block title_content %}
 <header>
+  <time>Posted on {{ page.date | readableDate }}</time>
+  {% if modified %}
+  <time>Updated on {{ modified | readableDate }}</time>
+  {% endif %}
   <ul class="list-horizontal">
-    <time>{{ page.date | readableDate }}</time>
     {%- for tag in tags | filterTagList %} {%- set tagUrl %}/tags/{{ tag |
     slugify }}/{% endset %}
     <li class="page-tag">
@@ -13,9 +16,6 @@ layout: layouts/base.njk
     </li>
     {%- endfor %}
   </ul>
-  {% if modified %}
-  <time>Updated {{ modified | readableDate }}</time>
-  {% endif %}
   <h1>{{ title }}</h1>
 </header>
 
