@@ -4,6 +4,8 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const eleventyImage = require("@11ty/eleventy-img");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const markdownItAttribution = require("markdown-it-attribution");
+const markdownItFootnote = require("markdown-it-footnote");
 
 function relativeToInputPath(inputPath, relativeFilePath) {
   let split = inputPath.split("/");
@@ -113,6 +115,12 @@ module.exports = function (eleventyConfig) {
         callback("wrong format", null);
       }
     }
+  );
+
+  /** Markdown updates */
+
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(markdownItAttribution).use(markdownItFootnote)
   );
 
   return {

@@ -1,21 +1,20 @@
 ---
-author: Me
 title: Markdown Syntax Guide
-date: 2021-03-16
-description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+date: 2024-01-01
+description: This post contains examples on how to use Markdown and how it is rendered
 tags:
   - markdown
   - css
   - html
 ---
 
-This article offers a sample of basic Markdown syntax that can be used in Eleventy content files, also it shows whether basic HTML elements are decorated with CSS in a Eleventy theme.
+This post contains the list of all markdown attributes currently supported by this 11ty template.
 
 <!--more-->
 
 ## Headings
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+The following HTML `<h1>`—`<h6>` elements represent 6 levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
 # H1
 
@@ -31,9 +30,9 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 
 ## Paragraph
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Dui nunc mattis enim ut. Purus non enim praesent elementum facilisis leo vel fringilla est. Congue nisi vitae suscipit tellus mauris a diam maecenas. Orci sagittis eu volutpat odio. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Viverra nam libero justo laoreet sit amet. Arcu cursus vitae congue mauris rhoncus aenean vel elit. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Ultrices gravida dictum fusce ut placerat. Egestas diam in arcu cursus euismod quis. Sem integer vitae justo eget magna fermentum.
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+Lacus sed viverra tellus in. Posuere ac ut consequat semper viverra nam libero justo laoreet. Et leo duis ut diam quam nulla porttitor massa id. Augue eget arcu dictum varius duis at consectetur lorem. Cras tincidunt lobortis feugiat vivamus at augue eget. Pulvinar neque laoreet suspendisse interdum consectetur libero id. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Platea dictumst vestibulum rhoncus est pellentesque. Lacus laoreet non curabitur gravida arcu ac tortor dignissim convallis.
 
 ## Blockquotes
 
@@ -41,19 +40,15 @@ The blockquote element represents content that is quoted from another source, op
 
 #### Blockquote without attribution
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+> Leo duis ut diam quam nulla.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
 #### Blockquote with attribution
 
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
+> The only thing we have to fear is fear itself.<br>
+> — <cite>Franklin D. Roosevelt[^1]</cite>
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-<aside>
-This doesn't work for now, you should add a plugin for `markdown-it`, or write your own. This one seems popular, [markdown-it-attribution](https://github.com/dweidner/markdown-it-attribution)
-</aside>
+[^1]: The above quote is excerpted from FDR's 1st inaugural [speech](https://historymatters.gmu.edu/d/5057/).
 
 ## Code Blocks
 
@@ -61,37 +56,45 @@ This doesn't work for now, you should add a plugin for `markdown-it`, or write y
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="">
+  <!DOCTYPE html>
+
   <head>
     <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="description" content="" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:alt" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
   </head>
+
   <body>
-    <p>Test</p>
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <script src="js/app.js"></script>
   </body>
 </html>
 ```
-
-#### Code block indented with four spaces
-
-    <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
 
 ## List Types
 
 #### Ordered List
 
-1. First item
-2. Second item
-3. Third item
+1. My First item
+2. My Second item
+3. My Third item
 
 #### Unordered List
 
@@ -108,15 +111,20 @@ This doesn't work for now, you should add a plugin for `markdown-it`, or write y
 - Dairy
   - Milk
   - Cheese
+- Egg
 
-## Other Elements — abbr, sub, sup, kbd, mark
+## Other (HTML) Elements
+
+#### abbr
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
-H<sub>2</sub>O
+#### sub/sup
 
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+H<sub>2</sub>O X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
+#### kbd, mark
 
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the
+session. Most <mark>salamanders</mark> are nocturnal, and hunt for insects,
+worms, and other small creatures.

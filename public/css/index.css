@@ -1,8 +1,8 @@
 :root {
   --width: 720px;
-  --font-main: Verdana, serif;
-  --font-secondary: Verdana, serif;
-  --font-scale: 1em;
+  --font-main: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  --font-secondary: Verdana, Georgia, Times, serif;
   --background-color: #fff;
   --heading-color: #222;
   --text-color: #444;
@@ -11,20 +11,18 @@
   --code-background-color: #f2f2f2;
   --code-color: #222;
   --code-border-color: #ccc;
-  --blockquote-color: #222;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #01242e;
+    --background-color: #0d1117;
     --heading-color: #eee;
     --text-color: #ddd;
     --link-color: #3bb2ed;
     --visited-color: #8b6fcb;
     --code-background-color: #2d2d2d;
     --code-color: #ddd;
-    --code-border-color: slategray;
-    --blockquote-color: #ccc;
+    --code-border-color: #2d2d2d;
   }
 }
 
@@ -37,24 +35,22 @@
   --code-background-color: #f2f2f2;
   --code-color: #222;
   --code-border-color: #ccc;
-  --blockquote-color: #222;
 }
 
 [data-theme="dark"] {
-  --background-color: #01242e;
+  --background-color: #0d1117;
   --heading-color: #eee;
   --text-color: #ddd;
   --link-color: #3bb2ed;
   --visited-color: #8b6fcb;
   --code-background-color: #2d2d2d;
   --code-color: #ddd;
-  --code-border-color: slategray;
-  --blockquote-color: #ccc;
+  --code-border-color: #2d2d2d;
 }
 
+/* Default */
 body {
   font-family: var(--font-secondary);
-  font-size: var(--font-scale);
   margin: auto;
   padding: 20px;
   max-width: var(--width);
@@ -74,9 +70,6 @@ h5,
 h6 {
   font-family: var(--font-main);
   color: var(--heading-color);
-}
-
-h1 {
   line-height: 1.2;
 }
 
@@ -91,6 +84,12 @@ a:hover {
   text-decoration: underline;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 nav a {
   margin-right: 8px;
 }
@@ -98,19 +97,6 @@ nav a {
 strong,
 b {
   color: var(--heading-color);
-}
-
-button {
-  margin: 0;
-  cursor: pointer;
-}
-
-main {
-  line-height: 1.6;
-}
-
-header nav li {
-  margin-inline-end: 8px;
 }
 
 table {
@@ -141,7 +127,6 @@ p code {
 blockquote {
   border-left: 4px solid #d6d6d7;
   color: var(--code-color);
-  /* background-color: var(--code-background-color); */
   padding-left: 1.5em;
   font-style: italic;
   margin: 1em 0;
@@ -156,19 +141,24 @@ main footer {
   text-align: left;
 }
 
-.title:hover {
-  text-decoration: none;
+figure {
+  margin: 0;
+  border-left: 4px solid #d6d6d7;
 }
 
-.title h1 {
-  font-size: 1.5em;
+figure > blockquote {
+  border-left: 0 solid #d6d6d7;
 }
 
-.inline {
-  width: auto !important;
+figure > figcaption {
+  padding-left: 1.5em;
 }
 
-/* blog post list */
+hr {
+  opacity: 0.7;
+}
+
+/* Posts */
 ul.blog-posts {
   list-style-type: none;
   padding: unset;
@@ -186,28 +176,22 @@ ul.blog-posts li a:visited {
   color: var(--visited-color);
 }
 
-/** Horizontal navigation */
+/* Horizontal navigation */
 nav ul,
-.list-horizontal {
+ul.list-horizontal {
   padding-inline-start: 0;
 }
 
 nav ul li,
-.list-horizontal li {
+ul.list-horizontal li {
   display: inline-block;
 }
 
-header > .list-horizontal {
+header > ul.list-horizontal {
   margin-top: 0;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/** Custom **/
+/* SVGs */
 .svgs {
   width: 1.25rem;
   height: 1.25rem;
@@ -226,12 +210,12 @@ nav {
   fill: currentColor;
 }
 
-/** Tags **/
+/* Tags */
 .page-tag a:before {
   content: "#";
 }
 
-/** Pagination */
+/* Pagination */
 .pagination {
   display: flex;
   flex-direction: row;
@@ -250,24 +234,19 @@ nav {
   text-align: right;
 }
 
-hr {
-  opacity: 0.7;
-}
-
-.img-txt {
-  height: 1.1em;
-}
-
+/* Video embed */
 video,
 .video {
   width: 100%;
   aspect-ratio: 16/9;
 }
 
+/* Aside */
 aside,
 .notice {
-  padding: 8px 16px;
-  margin-bottom: 16px;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   border-left: 0.25em solid royalblue;
   border-radius: 2px;
   background-color: var(--code-background-color);

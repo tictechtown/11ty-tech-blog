@@ -1,7 +1,7 @@
 ---
 title: Code Blocks Theme
-date: 2024-01-01
-tags: ["Features", "Markdown"]
+date: 2024-01-20
+tags: ["markdown", "prism"]
 ---
 
 This article shows various Code Blocks allowing to easily compare sublime themes.
@@ -12,7 +12,9 @@ This article shows various Code Blocks allowing to easily compare sublime themes
 
 Code blocks.. ❤️ with automatic syntax highlighting ✨‍
 
-See [the docs](https://www.getzola.org/documentation/content/syntax-highlighting/) for options.
+We use [prism.js](https://prismjs.com/) and [syntax highlighting](https://www.11ty.dev/docs/plugins/syntaxhighlight/) plugin.
+
+The npm plugin generates the html code, and prism js provides the css
 
 ### Inline Code block
 

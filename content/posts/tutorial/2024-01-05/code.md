@@ -1,11 +1,10 @@
 ---
-title: Post with some code blocks
+title: Code blocks
 description: This post contains sample code blocks
 date: 2023-01-05
 tags:
   - eleventy
   - markdown
-  - code
 ---
 
 A post with some code samples. These are using the Prism CSS library.

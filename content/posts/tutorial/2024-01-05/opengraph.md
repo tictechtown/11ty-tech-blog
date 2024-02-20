@@ -1,10 +1,11 @@
 ---
-title: How to set Opengraph preview image and metadata
+title: Opengraph preview
 description: Instructions on setting up various Opengraph headers
 tags:
   - opengraph
   - image
   - preview
+  - eleventy
 opengraph:
   image: /images/override-placeholder-image.jpg
 ---
@@ -29,7 +30,7 @@ To override the preview image for a specific post, set the `opengraph.image` val
 
 ```markdown
 ---
-title: How to set Opengraph preview image and metadata
+title: Opengraph preview
 opengraph:
   image: /images/image003.jpg
 ---
@@ -41,7 +42,7 @@ All three of these are taken from the post's frontmatter's title, description, a
 
 ```markdown
 ---
-title: How to set Opengraph preview image and metadata
+title: Opengraph preview
 description: Instructions on setting up various Opengraph headers
 tags:
   - opengraph
@@ -58,6 +59,6 @@ If missing, the defaults are taken from the `metadata.json` again.
 
 The author and type are always taken from the metadata.json author and type.
 
-## Testing your OpenGraph Metadata
+### Testing your OpenGraph Metadata
 
 You can go to the [opengraph.xyz](https://www.opengraph.xyz/) website, enter your published URL and see if there's any issue.

@@ -6,7 +6,7 @@ layout: layouts/base.njk
 <header>
   <time>Posted on {{ page.date | readableDate }}</time>
   {% if modified %}
-  <time>Updated on {{ modified | readableDate }}</time>
+  <br /><time>Updated on {{ modified | readableDate }}</time>
   {% endif %}
   <ul class="list-horizontal">
     {%- for tag in tags | filterTagList %} {%- set tagUrl %}/tags/{{ tag |
