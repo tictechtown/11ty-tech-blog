@@ -52,7 +52,7 @@
     "proficiencyLevel": "Beginner",
     "image": "/images/placeholder-og-image.jpg",
     "author": "&lt;Author Name&gt;",
-    "keywords": "",
+    "keywords": "tutorial eleventy",
     "url": "https://example.com/11ty-tech-blog/posts/tutorial/2022-08-15-post-date/",
     "datePublished": "Mon Aug 15 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
     "dateCreated": "Mon Aug 15 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
@@ -167,9 +167,15 @@
 <header>
   <time>Posted on August 15, 2022</time>
   
-  <time>Updated on February 1, 2024</time>
+  <br><time>Updated on February 1, 2024</time>
   
   <ul class="list-horizontal">
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/tutorial/" class="post-tag">tutorial</a>
+    </li>
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/eleventy/" class="post-tag">eleventy</a>
+    </li>
   </ul>
   <h1>How to set the date of a post</h1>
 </header>
@@ -178,6 +184,8 @@
 <article><p>When writing a new post, you can set the date of the post in a few different ways. The date of the post determines the order it appears in the post listings.</p>
 <h3>In the filename</h3>
 <p>The date can be set in the post's filename. For example, <code>./content/posts/tutorial/2022-08-15-post-date.md</code> will be published to the URL <code>/posts/tutorial/2022-08-15-post-date/</code> and the date appears as <code>August 15, 2022</code>. This is the best way to write posts, since having the date at the beginning helps organize the posts in order.</p>
+<h3>In the enclosing folder</h3>
+<p>The date can be set in the post enclosing folder. For example, <code>./content/posts/tutorial/2022-08-15-post-date.md</code> will be published to the URL <code>/posts/tutorial/2022-08-15-post-date/</code> and the date appears as <code>August 15, 2022</code>. This is the second best way to write posts.</p>
 <h3>In the frontmatter</h3>
 <p>The date can also be set in the page's frontmatter.</p>
 <pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
@@ -192,7 +200,7 @@ date: 2024-02-02</span>
 <span class="token front-matter yaml language-yaml">title: How to set the date of a post
 updated: 2022-08-20</span>
 <span class="token punctuation">---</span></span></code></pre>
-<p>This is <strong>not</strong> the standard for 11ty and created just for this template.</p>
+<p>This is <strong>not</strong> the standard for Eleventy and created just for this template.</p>
 <h3>Posts without a date</h3>
 <p>If there's no date in the file name, or the frontmatter, then the date defaults to the time of build, so it gets updated each time the site is built.
 If you don't have a build process and serve it locally, it uses the filesystem to determine when the file was last updated/created.</p>
@@ -209,14 +217,14 @@ It will be easier for you to figure out, using any filesystem, to sort your post
 <footer>
   <nav class="pagination">
     <div class="prev">
-      <a href="/11ty-tech-blog/posts/2024/markdown-syntax/">
-        <strong>‹ Markdown Syntax Guide</strong></a>
+      <a href="/11ty-tech-blog/posts/2024/lorem-ipsum/">
+        <strong>‹ Customary Lorem Ipsum post</strong></a>
       
     </div>
 
     <div class="next">
-      <a href="/11ty-tech-blog/posts/tutorial/code/">
-        <strong>Post with some code blocks ›</strong></a>
+      <a href="/11ty-tech-blog/posts/tutorial/2024-01-05/code/">
+        <strong>Code blocks ›</strong></a>
       
     </div>
   </nav>

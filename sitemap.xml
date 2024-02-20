@@ -9,47 +9,47 @@
     <lastmod>2018-May-01</lastmod>
   </url> 
   <url>
-    <loc>https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/</loc>
-    <lastmod>2021-March-16</lastmod>
-  </url> 
-  <url>
     <loc>https://example.com/11ty-tech-blog/posts/tutorial/2022-08-15-post-date/</loc>
     <lastmod>2022-August-15</lastmod>
   </url> 
   <url>
-    <loc>https://example.com/11ty-tech-blog/posts/tutorial/code/</loc>
+    <loc>https://example.com/11ty-tech-blog/posts/tutorial/2024-01-05/code/</loc>
     <lastmod>2023-January-05</lastmod>
   </url> 
   <url>
-    <loc>https://example.com/11ty-tech-blog/posts/tutorial/syntax/</loc>
+    <loc>https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/</loc>
     <lastmod>2024-January-01</lastmod>
   </url> 
   <url>
+    <loc>https://example.com/11ty-tech-blog/posts/tutorial/2024-01-05/opengraph/</loc>
+    <lastmod>2024-January-05</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/11ty-tech-blog/posts/tutorial/syntax/</loc>
+    <lastmod>2024-January-20</lastmod>
+  </url> 
+  <url>
+    <loc>https://example.com/11ty-tech-blog/posts/tutorial/2024-02-01-tags/</loc>
+    <lastmod>2024-February-01</lastmod>
+  </url> 
+  <url>
     <loc>https://example.com/11ty-tech-blog/about/</loc>
-    <lastmod>2024-February-18</lastmod>
+    <lastmod>2024-February-20</lastmod>
   </url> 
   <url>
     <loc>https://example.com/11ty-tech-blog/archive/</loc>
-    <lastmod>2024-February-18</lastmod>
+    <lastmod>2024-February-20</lastmod>
   </url> 
   <url>
     <loc>https://example.com/11ty-tech-blog/</loc>
-    <lastmod>2024-February-18</lastmod>
+    <lastmod>2024-February-20</lastmod>
   </url> 
   <url>
-    <loc>https://example.com/11ty-tech-blog/posts/tutorial/notice/</loc>
-    <lastmod>2024-February-18</lastmod>
-  </url> 
-  <url>
-    <loc>https://example.com/11ty-tech-blog/posts/tutorial/opengraph/</loc>
-    <lastmod>2024-February-18</lastmod>
-  </url> 
-  <url>
-    <loc>https://example.com/11ty-tech-blog/tags/markdown/</loc>
-    <lastmod>2024-February-18</lastmod>
+    <loc>https://example.com/11ty-tech-blog/tags/lorem%20ipsum/</loc>
+    <lastmod>2024-February-20</lastmod>
   </url> 
   <url>
     <loc>https://example.com/11ty-tech-blog/tags/</loc>
-    <lastmod>2024-February-18</lastmod>
+    <lastmod>2024-February-20</lastmod>
   </url>
 </urlset>

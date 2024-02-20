@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Eleventy Starter Blog</title>
-<meta name="description" content="Short demo for ">
+<meta name="description" content="Instructions on setting up various Opengraph headers">
 <meta name="keywords" content="eleventy,blog,theme,template,starter">
 
 <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
@@ -23,11 +23,11 @@
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Eleventy Starter Blog">
-<meta property="og:title" content="Eleventy Starter Blog">
-<meta property="og:description" content="Short demo for ">
+<meta property="og:title" content="Opengraph preview">
+<meta property="og:description" content="Instructions on setting up various Opengraph headers">
 <meta property="og:url" content="https://example.com">
-<meta property="og:type" content="website">
-<meta property="og:image" content="/11ty-tech-blog/images/placeholder-og-image.jpg">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/override-placeholder-image.jpg">
 
 <meta name="generator" content="Eleventy v2.0.1">
 
@@ -40,6 +40,28 @@
 <link rel="alternate" href="/11ty-tech-blog/feed/feed.json" type="application/json" title="Eleventy Starter Blog">
 
 <!-- LD+JSON -->
+
+
+<meta property="article:published_time" content="Fri Jan 05 2024 00:00:00 GMT+0000 (Coordinated Universal Time)">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Opengraph preview",
+    "proficiencyLevel": "Beginner",
+    "image": "/images/override-placeholder-image.jpg",
+    "author": "&lt;Author Name&gt;",
+    "keywords": "tutorial opengraph image preview eleventy",
+    "url": "https://example.com/11ty-tech-blog/posts/tutorial/2024-01-05/opengraph/",
+    "datePublished": "Fri Jan 05 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "dateCreated": "Fri Jan 05 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "dateModified": "Fri Jan 05 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "description": "Instructions on setting up various Opengraph headers",
+    
+    
+  }
+</script>
 
 
  <script>
@@ -141,20 +163,80 @@
     </header>
     <main class="content">
       
-<h1>#code</h1>
 
- <ul reversed="" class="blog-posts">
-   
-  <li class="">
-    <time datetime="January 5, 2023">January 5, 2023</time>
-    &nbsp;-&nbsp;
-    <a href="/11ty-tech-blog/posts/tutorial/code/" class="postlist-link">
-      Post with some code blocks
-    </a>
-  </li>
-
+<header>
+  <time>Posted on January 5, 2024</time>
   
-</ul>
+  <ul class="list-horizontal">
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/tutorial/" class="post-tag">tutorial</a>
+    </li>
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/opengraph/" class="post-tag">opengraph</a>
+    </li>
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/image/" class="post-tag">image</a>
+    </li>
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/preview/" class="post-tag">preview</a>
+    </li>
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/eleventy/" class="post-tag">eleventy</a>
+    </li>
+  </ul>
+  <h1>Opengraph preview</h1>
+</header>
+
+ 
+<article><p>When sharing a URL, some sites will generate a preview with a title, description and image using certain <a href="https://ogp.me/">OpenGraph</a> metadata.</p>
+<h3>Set the preview image</h3>
+<p>A default Opengraph preview image for all posts is set in the <code>metadata.json</code>, which looks like:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"&lt;title>"</span><span class="token punctuation">,</span>
+  <span class="token property">"opengraph"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"image"</span><span class="token operator">:</span> <span class="token string">"&lt;image-url>"</span><span class="token punctuation">,</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"website"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>To override the preview image for a specific post, set the <code>opengraph.image</code> value in the frontmatter:</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: Opengraph preview
+opengraph:
+  image: /images/image003.jpg</span>
+<span class="token punctuation">---</span></span></code></pre>
+<h3>Title, description, and tags</h3>
+<p>All three of these are taken from the post's frontmatter's title, description, and tags.</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: Opengraph preview
+description: Instructions on setting up various Opengraph headers
+tags:
+  - opengraph
+  - image
+  - preview
+opengraph:
+  image: /assets/images/image003.jpg</span>
+<span class="token punctuation">---</span></span></code></pre>
+<p>If missing, the defaults are taken from the <code>metadata.json</code> again.</p>
+<h3>Author and type</h3>
+<p>The author and type are always taken from the metadata.json author and type.</p>
+<h3>Testing your OpenGraph Metadata</h3>
+<p>You can go to the <a href="https://www.opengraph.xyz/">opengraph.xyz</a> website, enter your published URL and see if there's any issue.</p>
+</article>
+<footer>
+  <nav class="pagination">
+    <div class="prev">
+      <a href="/11ty-tech-blog/posts/2024/markdown-syntax/">
+        <strong>‹ Markdown Syntax Guide</strong></a>
+      
+    </div>
+
+    <div class="next">
+      <a href="/11ty-tech-blog/posts/tutorial/syntax/">
+        <strong>Code Blocks Theme ›</strong></a>
+      
+    </div>
+  </nav>
+</footer>
 
 
     </main>

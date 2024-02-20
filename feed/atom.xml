@@ -5,7 +5,7 @@
   <link href="https://example.com/11ty-tech-blog/feed/feed/atom.xml" rel="self" />
   <link href="https://example.com/11ty-tech-blog/" ></link>
   <updated
-    >2024-02-18T20:15:46Z</updated
+    >2024-02-01T00:00:00Z</updated
   >
   <id>https://example.com</id>
   <author>
@@ -13,108 +13,53 @@
     <email>author.email@example.com</email>
   </author> 
   <entry>
-    <title>How to set Opengraph preview image and metadata</title>
-    <link href="https://example.com/11ty-tech-blog/posts/tutorial/opengraph/" />
-    <updated>2024-02-18T20:15:46Z</updated>
-    <id>https://example.com/11ty-tech-blog/posts/tutorial/opengraph/</id>
+    <title>Tags management</title>
+    <link href="https://example.com/11ty-tech-blog/posts/tutorial/2024-02-01-tags/" />
+    <updated>2024-02-01T00:00:00Z</updated>
+    <id>https://example.com/11ty-tech-blog/posts/tutorial/2024-02-01-tags/</id>
     <content type="html"
-      >&lt;p&gt;When sharing a URL, some sites will generate a preview with a title, description and image using certain &lt;a href=&quot;https://ogp.me/&quot;&gt;OpenGraph&lt;/a&gt; metadata.&lt;/p&gt;
-&lt;h3&gt;Set the preview image&lt;/h3&gt;
-&lt;p&gt;A default Opengraph preview image for all posts is set in the &lt;code&gt;metadata.json&lt;/code&gt;, which looks like:&lt;/p&gt;
-&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;title&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;opengraph&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;&quot;image&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;image-url&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;website&quot;&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To override the preview image for a specific post, set the &lt;code&gt;opengraph.image&lt;/code&gt; value in the frontmatter:&lt;/p&gt;
+      >&lt;p&gt;When writing posts, it&#39;s nice for the reader to be able to see all posts related to the same tag. Also an important step for the writer, to organize his thoughts and ideas.
+Thankfully, eleventy makes it easy to automate this process.&lt;/p&gt;
+&lt;h3&gt;In the frontmatter&lt;/h3&gt;
+&lt;p&gt;The tags can be set in the page&#39;s frontmatter.&lt;/p&gt;
 &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: How to set Opengraph preview image and metadata
-opengraph:
-  image: /images/image003.jpg&lt;/span&gt;
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: ...
+description: ...
+tags: tag1&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Title, description, and tags&lt;/h3&gt;
-&lt;p&gt;All three of these are taken from the post&#39;s frontmatter&#39;s title, description, and tags.&lt;/p&gt;
+&lt;p&gt;By default, if you write &lt;code&gt;tags: tag1 tag2 tag3&lt;/code&gt;, Eleventy will interpret this as one tag with name &lt;code&gt;tag1 tag2 tag3&lt;/code&gt;. This is not something we want.
+Instead, if you want a list of tags, you should use the following syntax&lt;/p&gt;
 &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: How to set Opengraph preview image and metadata
-description: Instructions on setting up various Opengraph headers
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: ...
+description: ...
 tags:
-  - opengraph
-  - image
-  - preview
-opengraph:
-  image: /assets/images/image003.jpg&lt;/span&gt;
+  - tag1
+  - tag2
+  - tag3&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If missing, the defaults are taken from the &lt;code&gt;metadata.json&lt;/code&gt; again.&lt;/p&gt;
-&lt;h3&gt;Author and type&lt;/h3&gt;
-&lt;p&gt;The author and type are always taken from the metadata.json author and type.&lt;/p&gt;
-&lt;h2&gt;Testing your OpenGraph Metadata&lt;/h2&gt;
-&lt;p&gt;You can go to the &lt;a href=&quot;https://www.opengraph.xyz/&quot;&gt;opengraph.xyz&lt;/a&gt; website, enter your published URL and see if there&#39;s any issue.&lt;/p&gt;
-</content
-    >
-  </entry> 
-  <entry>
-    <title>Post with notices or alert boxes</title>
-    <link href="https://example.com/11ty-tech-blog/posts/tutorial/notice/" />
-    <updated>2024-02-18T20:15:46Z</updated>
-    <id>https://example.com/11ty-tech-blog/posts/tutorial/notice/</id>
-    <content type="html"
-      >&lt;p&gt;This post will show how to create different kinds of notice or alert boxes such as a regular box, as well as info, success, warning, and danger.&lt;/p&gt;
-&lt;p&gt;In all cases, use the paired shortcode &lt;code&gt;notice&lt;/code&gt; with the notice type (info, success, warning, danger). Leave the notice type out for the regular notice box. You can use markdown inside.&lt;/p&gt;
-&lt;div class=&quot;notice&quot;&gt;
-This is the default notice. You _can_ use Markdown.
-&lt;/div&gt;
-&lt;div class=&quot;notice info&quot;&gt;
-This is an info notice. Info means [information](https://en.wikipedia.org/wiki/Information)
-&lt;/div&gt;
-&lt;div class=&quot;notice success&quot;&gt;
-This is a success notice. Great Success.
-&lt;/div&gt;
-&lt;div class=&quot;notice warning&quot;&gt;
-This is a warning notice. Don&#39;t use `GOTO` statements!
-&lt;/div&gt;
-&lt;div class=&quot;notice danger&quot;&gt;
-This is a danger notice. **Smoking is fatal**.
-&lt;/div&gt;
-&lt;p&gt;For a regular notice box,&lt;/p&gt;
-&lt;!-- prettier-ignore-start --&gt;
-&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;notice&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;This is the default notice. You _can_ use Markdown.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- prettier-ignore-end --&gt;
-&lt;p&gt;For an info notice box,&lt;/p&gt;
-&lt;!-- prettier-ignore-start --&gt;
-&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;notice info&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  This is an info notice. Info means
-  [information](https://en.wikipedia.org/wiki/Information)
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- prettier-ignore-end --&gt;
-&lt;p&gt;For a success notice box,&lt;/p&gt;
-&lt;!-- prettier-ignore-start --&gt;
-&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;notice success&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;This is a success notice. Great Success.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- prettier-ignore-end --&gt;
-&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;notice warning&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  This is a warning notice. Don&#39;t use `GOTO` statements!
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For a danger notice box,&lt;/p&gt;
-&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;notice danger&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;This is a danger notice. **Smoking is fatal**.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will create 3 tags, &lt;code&gt;tag1&lt;/code&gt; &lt;code&gt;tag2&lt;/code&gt; and &lt;code&gt;tag3&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;In the enclosing folder&lt;/h3&gt;
+&lt;p&gt;You can automatically add tags to every entries in the same folder if you create a &lt;code&gt;.json&lt;/code&gt; with the folder name.
+For instance, if you are in the folder &lt;code&gt;tutorial&lt;/code&gt;, add a &lt;code&gt;tutorial.json&lt;/code&gt; in it, with the following values:&lt;/p&gt;
+&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;tags&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;tutorial&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will automatically add the tag &lt;code&gt;tutorial&lt;/code&gt; to all posts inside the folder &lt;code&gt;tutorial&lt;/code&gt;.&lt;/p&gt;
 </content
     >
   </entry> 
   <entry>
     <title>Code Blocks Theme</title>
     <link href="https://example.com/11ty-tech-blog/posts/tutorial/syntax/" />
-    <updated>2024-01-01T00:00:00Z</updated>
+    <updated>2024-01-20T00:00:00Z</updated>
     <id>https://example.com/11ty-tech-blog/posts/tutorial/syntax/</id>
     <content type="html"
       >&lt;p&gt;This article shows various Code Blocks allowing to easily compare sublime themes.&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;h2&gt;Code Blocks&lt;/h2&gt;
 &lt;p&gt;Code blocks.. ❤️ with automatic syntax highlighting ✨‍&lt;/p&gt;
-&lt;p&gt;See &lt;a href=&quot;https://www.getzola.org/documentation/content/syntax-highlighting/&quot;&gt;the docs&lt;/a&gt; for options.&lt;/p&gt;
+&lt;p&gt;We use &lt;a href=&quot;https://prismjs.com/&quot;&gt;prism.js&lt;/a&gt; and &lt;a href=&quot;https://www.11ty.dev/docs/plugins/syntaxhighlight/&quot;&gt;syntax highlighting&lt;/a&gt; plugin.&lt;/p&gt;
+&lt;p&gt;The npm plugin generates the html code, and prism js provides the css&lt;/p&gt;
 &lt;h3&gt;Inline Code block&lt;/h3&gt;
 &lt;p&gt;If we want, we can also &lt;code&gt;specify inline code&lt;/code&gt; which is useful for &lt;code&gt;the small stuff&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Code Blocks without tag&lt;/h3&gt;
@@ -470,10 +415,167 @@ upr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gets&lt;span cla
     >
   </entry> 
   <entry>
-    <title>Post with some code blocks</title>
-    <link href="https://example.com/11ty-tech-blog/posts/tutorial/code/" />
+    <title>Opengraph preview</title>
+    <link href="https://example.com/11ty-tech-blog/posts/tutorial/2024-01-05/opengraph/" />
+    <updated>2024-01-05T00:00:00Z</updated>
+    <id>https://example.com/11ty-tech-blog/posts/tutorial/2024-01-05/opengraph/</id>
+    <content type="html"
+      >&lt;p&gt;When sharing a URL, some sites will generate a preview with a title, description and image using certain &lt;a href=&quot;https://ogp.me/&quot;&gt;OpenGraph&lt;/a&gt; metadata.&lt;/p&gt;
+&lt;h3&gt;Set the preview image&lt;/h3&gt;
+&lt;p&gt;A default Opengraph preview image for all posts is set in the &lt;code&gt;metadata.json&lt;/code&gt;, which looks like:&lt;/p&gt;
+&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;title&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;opengraph&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;image&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;image-url&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;website&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To override the preview image for a specific post, set the &lt;code&gt;opengraph.image&lt;/code&gt; value in the frontmatter:&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: Opengraph preview
+opengraph:
+  image: /images/image003.jpg&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Title, description, and tags&lt;/h3&gt;
+&lt;p&gt;All three of these are taken from the post&#39;s frontmatter&#39;s title, description, and tags.&lt;/p&gt;
+&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: Opengraph preview
+description: Instructions on setting up various Opengraph headers
+tags:
+  - opengraph
+  - image
+  - preview
+opengraph:
+  image: /assets/images/image003.jpg&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If missing, the defaults are taken from the &lt;code&gt;metadata.json&lt;/code&gt; again.&lt;/p&gt;
+&lt;h3&gt;Author and type&lt;/h3&gt;
+&lt;p&gt;The author and type are always taken from the metadata.json author and type.&lt;/p&gt;
+&lt;h3&gt;Testing your OpenGraph Metadata&lt;/h3&gt;
+&lt;p&gt;You can go to the &lt;a href=&quot;https://www.opengraph.xyz/&quot;&gt;opengraph.xyz&lt;/a&gt; website, enter your published URL and see if there&#39;s any issue.&lt;/p&gt;
+</content
+    >
+  </entry> 
+  <entry>
+    <title>Markdown Syntax Guide</title>
+    <link href="https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/" />
+    <updated>2024-01-01T00:00:00Z</updated>
+    <id>https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/</id>
+    <content type="html"
+      >&lt;p&gt;This post contains the list of all markdown attributes currently supported by this 11ty template.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2&gt;Headings&lt;/h2&gt;
+&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent 6 levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
+&lt;h1&gt;H1&lt;/h1&gt;
+&lt;h2&gt;H2&lt;/h2&gt;
+&lt;h3&gt;H3&lt;/h3&gt;
+&lt;h4&gt;H4&lt;/h4&gt;
+&lt;h5&gt;H5&lt;/h5&gt;
+&lt;h6&gt;H6&lt;/h6&gt;
+&lt;h2&gt;Paragraph&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Dui nunc mattis enim ut. Purus non enim praesent elementum facilisis leo vel fringilla est. Congue nisi vitae suscipit tellus mauris a diam maecenas. Orci sagittis eu volutpat odio. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Viverra nam libero justo laoreet sit amet. Arcu cursus vitae congue mauris rhoncus aenean vel elit. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Ultrices gravida dictum fusce ut placerat. Egestas diam in arcu cursus euismod quis. Sem integer vitae justo eget magna fermentum.&lt;/p&gt;
+&lt;p&gt;Lacus sed viverra tellus in. Posuere ac ut consequat semper viverra nam libero justo laoreet. Et leo duis ut diam quam nulla porttitor massa id. Augue eget arcu dictum varius duis at consectetur lorem. Cras tincidunt lobortis feugiat vivamus at augue eget. Pulvinar neque laoreet suspendisse interdum consectetur libero id. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Platea dictumst vestibulum rhoncus est pellentesque. Lacus laoreet non curabitur gravida arcu ac tortor dignissim convallis.&lt;/p&gt;
+&lt;h2&gt;Blockquotes&lt;/h2&gt;
+&lt;p&gt;The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code&gt;footer&lt;/code&gt; or &lt;code&gt;cite&lt;/code&gt; element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p&gt;
+&lt;h4&gt;Blockquote without attribution&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Leo duis ut diam quam nulla.
+&lt;strong&gt;Note&lt;/strong&gt; that you can use &lt;em&gt;Markdown syntax&lt;/em&gt; within a blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;Blockquote with attribution&lt;/h4&gt;
+&lt;figure class=&quot;c-blockquote&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The only thing we have to fear is fear itself.&lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figcaption class=&quot;c-blockquote__attribution&quot;&gt;&lt;cite&gt;Franklin D. Roosevelt&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Code Blocks&lt;/h2&gt;
+&lt;h4&gt;Code block with backticks&lt;/h4&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;no-js&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;utf-8&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;viewport&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;width=device-width, initial-scale=1&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;link&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;stylesheet&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;css/style.css&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;description&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;og:title&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;og:type&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;og:url&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;og:image&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;og:image:alt&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;link&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;icon&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/favicon.ico&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;sizes&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;any&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;link&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;icon&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/icon.svg&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;image/svg+xml&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;link&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;apple-touch-icon&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;icon.png&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;link&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;manifest&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;site.webmanifest&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;theme-color&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;#fafafa&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- Add your site or application content here --&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Hello world! This is HTML5 Boilerplate.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;js/app.js&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;List Types&lt;/h2&gt;
+&lt;h4&gt;Ordered List&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;My First item&lt;/li&gt;
+&lt;li&gt;My Second item&lt;/li&gt;
+&lt;li&gt;My Third item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Unordered List&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;List item&lt;/li&gt;
+&lt;li&gt;Another item&lt;/li&gt;
+&lt;li&gt;And another item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Nested list&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Fruit
+&lt;ul&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;Orange&lt;/li&gt;
+&lt;li&gt;Banana&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dairy
+&lt;ul&gt;
+&lt;li&gt;Milk&lt;/li&gt;
+&lt;li&gt;Cheese&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Egg&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Other (HTML) Elements&lt;/h2&gt;
+&lt;h4&gt;abbr&lt;/h4&gt;
+&lt;p&gt;&lt;abbr title=&quot;Graphics Interchange Format&quot;&gt;GIF&lt;/abbr&gt; is a bitmap image format.&lt;/p&gt;
+&lt;h4&gt;sub/sup&lt;/h4&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
+&lt;h4&gt;kbd, mark&lt;/h4&gt;
+&lt;p&gt;Press &lt;kbd&gt;&lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;ALT&lt;/kbd&gt;+&lt;kbd&gt;Delete&lt;/kbd&gt;&lt;/kbd&gt; to end the
+session. Most &lt;mark&gt;salamanders&lt;/mark&gt; are nocturnal, and hunt for insects,
+worms, and other small creatures.&lt;/p&gt;
+&lt;hr class=&quot;footnotes-sep&quot;&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;The above quote is excerpted from FDR&#39;s 1st inaugural &lt;a href=&quot;https://historymatters.gmu.edu/d/5057/&quot;&gt;speech&lt;/a&gt;. &lt;a href=&quot;https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content
+    >
+  </entry> 
+  <entry>
+    <title>Code blocks</title>
+    <link href="https://example.com/11ty-tech-blog/posts/tutorial/2024-01-05/code/" />
     <updated>2023-01-05T00:00:00Z</updated>
-    <id>https://example.com/11ty-tech-blog/posts/tutorial/code/</id>
+    <id>https://example.com/11ty-tech-blog/posts/tutorial/2024-01-05/code/</id>
     <content type="html"
       >&lt;p&gt;A post with some code samples. These are using the Prism CSS library.&lt;/p&gt;
 &lt;h3&gt;Basic code blocks using backticks&lt;/h3&gt;
@@ -542,6 +644,8 @@ upr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; gets&lt;span cla
       >&lt;p&gt;When writing a new post, you can set the date of the post in a few different ways. The date of the post determines the order it appears in the post listings.&lt;/p&gt;
 &lt;h3&gt;In the filename&lt;/h3&gt;
 &lt;p&gt;The date can be set in the post&#39;s filename. For example, &lt;code&gt;./content/posts/tutorial/2022-08-15-post-date.md&lt;/code&gt; will be published to the URL &lt;code&gt;/posts/tutorial/2022-08-15-post-date/&lt;/code&gt; and the date appears as &lt;code&gt;August 15, 2022&lt;/code&gt;. This is the best way to write posts, since having the date at the beginning helps organize the posts in order.&lt;/p&gt;
+&lt;h3&gt;In the enclosing folder&lt;/h3&gt;
+&lt;p&gt;The date can be set in the post enclosing folder. For example, &lt;code&gt;./content/posts/tutorial/2022-08-15-post-date.md&lt;/code&gt; will be published to the URL &lt;code&gt;/posts/tutorial/2022-08-15-post-date/&lt;/code&gt; and the date appears as &lt;code&gt;August 15, 2022&lt;/code&gt;. This is the second best way to write posts.&lt;/p&gt;
 &lt;h3&gt;In the frontmatter&lt;/h3&gt;
 &lt;p&gt;The date can also be set in the page&#39;s frontmatter.&lt;/p&gt;
 &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token front-matter-block&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
@@ -556,7 +660,7 @@ date: 2024-02-02&lt;/span&gt;
 &lt;span class=&quot;token front-matter yaml language-yaml&quot;&gt;title: How to set the date of a post
 updated: 2022-08-20&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is &lt;strong&gt;not&lt;/strong&gt; the standard for 11ty and created just for this template.&lt;/p&gt;
+&lt;p&gt;This is &lt;strong&gt;not&lt;/strong&gt; the standard for Eleventy and created just for this template.&lt;/p&gt;
 &lt;h3&gt;Posts without a date&lt;/h3&gt;
 &lt;p&gt;If there&#39;s no date in the file name, or the frontmatter, then the date defaults to the time of build, so it gets updated each time the site is built.
 If you don&#39;t have a build process and serve it locally, it uses the filesystem to determine when the file was last updated/created.&lt;/p&gt;
@@ -573,135 +677,41 @@ It will be easier for you to figure out, using any filesystem, to sort your post
     >
   </entry> 
   <entry>
-    <title>Markdown Syntax Guide</title>
-    <link href="https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/" />
-    <updated>2021-03-16T00:00:00Z</updated>
-    <id>https://example.com/11ty-tech-blog/posts/2024/markdown-syntax/</id>
-    <content type="html"
-      >&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Eleventy content files, also it shows whether basic HTML elements are decorated with CSS in a Eleventy theme.&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2&gt;Headings&lt;/h2&gt;
-&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
-&lt;h1&gt;H1&lt;/h1&gt;
-&lt;h2&gt;H2&lt;/h2&gt;
-&lt;h3&gt;H3&lt;/h3&gt;
-&lt;h4&gt;H4&lt;/h4&gt;
-&lt;h5&gt;H5&lt;/h5&gt;
-&lt;h6&gt;H6&lt;/h6&gt;
-&lt;h2&gt;Paragraph&lt;/h2&gt;
-&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;
-&lt;p&gt;Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p&gt;
-&lt;h2&gt;Blockquotes&lt;/h2&gt;
-&lt;p&gt;The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code&gt;footer&lt;/code&gt; or &lt;code&gt;cite&lt;/code&gt; element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p&gt;
-&lt;h4&gt;Blockquote without attribution&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-&lt;strong&gt;Note&lt;/strong&gt; that you can use &lt;em&gt;Markdown syntax&lt;/em&gt; within a blockquote.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4&gt;Blockquote with attribution&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Don&#39;t communicate by sharing memory, share memory by communicating.&lt;br&gt;
-— &lt;cite&gt;Rob Pike[^1]&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;[^1]: The above quote is excerpted from Rob Pike&#39;s &lt;a href=&quot;https://www.youtube.com/watch?v=PAAkCSZUG1c&quot;&gt;talk&lt;/a&gt; during Gopherfest, November 18, 2015.&lt;/p&gt;
-&lt;aside&gt;
-This doesn&#39;t work for now, you should add a plugin for `markdown-it`, or write your own. This one seems popular, [markdown-it-attribution](https://github.com/dweidner/markdown-it-attribution)
-&lt;/aside&gt;
-&lt;h2&gt;Code Blocks&lt;/h2&gt;
-&lt;h4&gt;Code block with backticks&lt;/h4&gt;
-&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;en&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;utf-8&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Example HTML5 Document&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Test&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;Code block indented with four spaces&lt;/h4&gt;
-&lt;p&gt;&amp;lt;!doctype html&amp;gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;title&gt;Example HTML5 Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;p&gt;Test&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;&lt;/p&gt;
-&lt;h2&gt;List Types&lt;/h2&gt;
-&lt;h4&gt;Ordered List&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;First item&lt;/li&gt;
-&lt;li&gt;Second item&lt;/li&gt;
-&lt;li&gt;Third item&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;Unordered List&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;List item&lt;/li&gt;
-&lt;li&gt;Another item&lt;/li&gt;
-&lt;li&gt;And another item&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Nested list&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Fruit
-&lt;ul&gt;
-&lt;li&gt;Apple&lt;/li&gt;
-&lt;li&gt;Orange&lt;/li&gt;
-&lt;li&gt;Banana&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Dairy
-&lt;ul&gt;
-&lt;li&gt;Milk&lt;/li&gt;
-&lt;li&gt;Cheese&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Other Elements — abbr, sub, sup, kbd, mark&lt;/h2&gt;
-&lt;p&gt;&lt;abbr title=&quot;Graphics Interchange Format&quot;&gt;GIF&lt;/abbr&gt; is a bitmap image format.&lt;/p&gt;
-&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
-&lt;p&gt;X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Press &lt;kbd&gt;&lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;ALT&lt;/kbd&gt;+&lt;kbd&gt;Delete&lt;/kbd&gt;&lt;/kbd&gt; to end the session.&lt;/p&gt;
-&lt;p&gt;Most &lt;mark&gt;salamanders&lt;/mark&gt; are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p&gt;
-</content
-    >
-  </entry> 
-  <entry>
     <title>Customary Lorem Ipsum post</title>
     <link href="https://example.com/11ty-tech-blog/posts/2024/lorem-ipsum/" />
     <updated>2018-05-01T00:00:00Z</updated>
     <id>https://example.com/11ty-tech-blog/posts/2024/lorem-ipsum/</id>
     <content type="html"
-      >&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor orci eu lobortis elementum nibh tellus molestie nunc non. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Pharetra sit amet aliquam id. Volutpat odio facilisis mauris sit amet massa vitae tortor condimentum. Semper viverra nam libero justo laoreet. Mattis rhoncus urna neque viverra justo nec ultrices dui. Mauris augue neque gravida in fermentum et sollicitudin. Nunc mattis enim ut tellus elementum sagittis vitae. Nibh sed pulvinar proin gravida hendrerit lectus. Diam quam nulla porttitor massa. Ac felis donec et odio pellentesque diam volutpat. Cursus eget nunc scelerisque viverra mauris in. Non curabitur gravida arcu ac tortor dignissim convallis. Adipiscing at in tellus integer feugiat.&lt;/p&gt;
-&lt;h2&gt;Consectetur libero id&lt;/h2&gt;
-&lt;p&gt;Faucibus nisl tincidunt eget nullam non nisi. Tristique nulla aliquet enim tortor at auctor urna. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Cras ornare arcu dui vivamus arcu felis bibendum ut. Eget nulla facilisi etiam dignissim diam quis enim. Consectetur purus ut faucibus pulvinar elementum. Ultricies tristique nulla aliquet enim tortor at auctor urna nunc. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Id semper risus in hendrerit gravida rutrum. Dignissim convallis aenean et tortor at.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/397/31445325431_981b759c23_h.jpg&quot; alt=&quot;lorem photum&quot;&gt;&lt;/p&gt;
+      >&lt;h1&gt;Aut eveniet pariatur ut error velit.&lt;/h1&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet. In corrupti quia aut esse impedit in quia impedit sed autem pariatur vel fugiat velit qui possimus doloremque qui nulla iure. Et nostrum tenetur qui pariatur totam et nemo mollitia sit dolores nostrum id animi sunt ea laudantium voluptatem.&lt;/p&gt;
+&lt;h2&gt;Et consequatur voluptas non consectetur quos.&lt;/h2&gt;
+&lt;p&gt;Et ratione repellat et optio optio et temporibus adipisci. Eum eligendi voluptatum sit nemo velit et perspiciatis Quis eos magnam atque.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://loremflickr.com/g/640/480/paris,girl/all&quot; alt=&quot;lorem photum&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Laoreet non curabitur gravida arcu. Neque sodales ut etiam sit amet. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Ornare arcu dui vivamus arcu. Et leo duis ut diam quam nulla porttitor massa id. Diam sit amet nisl suscipit adipiscing bibendum est. Porttitor massa id neque aliquam vestibulum morbi blandit. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Dui ut ornare lectus sit amet est placerat in egestas. Vel elit scelerisque mauris pellentesque pulvinar.&lt;/p&gt;
 &lt;aside&gt;Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Aenean pharetra magna ac placerat vestibulum lectus mauris.&lt;/aside&gt;
 &lt;p&gt;Sit amet justo donec enim diam vulputate ut pharetra sit. Mi proin sed libero enim sed faucibus. Tortor at auctor urna nunc id cursus metus. In pellentesque massa placerat duis ultricies. Semper feugiat nibh sed pulvinar.&lt;/p&gt;
 &lt;p&gt;Amet purus gravida quis blandit turpis cursus in hac. Natoque penatibus et magnis dis parturient montes nascetur. Tortor dignissim convallis aenean et tortor at. Eget est lorem ipsum dolor. Lectus nulla at volutpat diam ut venenatis tellus. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. At tellus at urna condimentum mattis pellentesque id. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Etiam tempor orci eu lobortis elementum nibh tellus. Integer enim neque volutpat ac.&lt;/p&gt;
-&lt;h3&gt;Non blandit massa enim nec&lt;/h3&gt;
-&lt;p&gt;Leo urna molestie at elementum eu facilisis. Vestibulum sed arcu non odio. Tortor aliquam nulla facilisi cras fermentum odio. Ante in nibh mauris cursus mattis molestie. Lacus sed viverra tellus in. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus. Non consectetur a erat nam at lectus urna duis convallis. Tortor dignissim convallis aenean et tortor at risus viverra adipiscing. Tincidunt id aliquet risus feugiat in ante. Aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus. Nec ultrices dui sapien eget. Ullamcorper a lacus vestibulum sed arcu. Et odio pellentesque diam volutpat commodo sed egestas. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Ipsum a arcu cursus vitae. Adipiscing elit duis tristique sollicitudin nibh sit. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Felis donec et odio pellentesque diam volutpat commodo. Eget nulla facilisi etiam dignissim diam quis.&lt;/p&gt;
+&lt;h3&gt;Quo provident iure non consequatur magni!&lt;/h3&gt;
+&lt;p&gt;Sit recusandae porro 33 aliquid obcaecati et quia dolor et corporis reprehenderit in voluptatibus consequatur qui incidunt dicta! Qui asperiores tempora est dolore maiores aut blanditiis quidem est distinctio quam aut deleniti error ex architecto sint.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Mauris a diam maecenas sed enim ut sem viverra. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Cursus eget nunc scelerisque viverra. Id velit ut tortor pretium viverra suspendisse. Ultrices eros in cursus turpis. Quis hendrerit dolor magna eget est lorem ipsum dolor. Diam in arcu cursus euismod quis. Vitae suscipit tellus mauris a diam maecenas sed. Purus non enim praesent elementum facilisis leo vel. Porttitor massa id neque aliquam. Lectus urna duis convallis convallis tellus. Nunc consequat interdum varius sit amet mattis vulputate enim.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Orci nulla pellentesque dignissim enim sit. Tincidunt vitae semper quis lectus nulla at volutpat. Molestie at elementum eu facilisis. In aliquam sem fringilla ut morbi tincidunt augue interdum. Dui nunc mattis enim ut tellus elementum. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Enim diam vulputate ut pharetra sit amet aliquam id. Volutpat est velit egestas dui id ornare. Eu mi bibendum neque egestas congue. Cras sed felis eget velit. Integer quis auctor elit sed vulputate mi sit amet mauris. Gravida rutrum quisque non tellus orci. Rutrum quisque non tellus orci ac auctor.&lt;/p&gt;
-&lt;h3&gt;Tincidunt arcu non sodales&lt;/h3&gt;
-&lt;p&gt;Neque sodales ut etiam sit. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Aliquet enim tortor at auctor urna nunc id. Turpis massa tincidunt dui ut ornare lectus sit amet. Id faucibus nisl tincidunt eget nullam non. Vitae ultricies leo integer malesuada nunc. Volutpat est velit egestas dui id ornare arcu odio ut. Cursus turpis massa tincidunt dui ut ornare. Neque aliquam vestibulum morbi blandit cursus risus at. Aenean vel elit scelerisque mauris. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Nibh tortor id aliquet lectus proin. Sagittis nisl rhoncus mattis rhoncus urna neque.&lt;/p&gt;
-&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loremFunction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;boolean&lt;/span&gt; ipsum&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token constant&quot;&gt;LOG&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Lorem ipsum begins&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token class-name&quot;&gt;Intent&lt;/span&gt; sendIntent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Intent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        sendIntent&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;putExtra&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;lorem ipsum dolor&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;sit amet&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;h3&gt;Ut explicabo veniam sed adipisci voluptatibus et fugit porro?&lt;/h3&gt;
+&lt;p&gt;Sit reprehenderit corrupti ut consectetur eligendi et possimus architecto ut atque eligendi. Quo consequatur repellendus aut delectus recusandae ea illum voluptates ut voluptates placeat et quasi consectetur qui quia molestias cum consequatur animi. Qui consequatur dolores non velit asperiores ut commodi dolorum ex voluptate voluptatibus ut rerum animi. Qui neque nihil qui magni omnis eum distinctio quibusdam sit quod repellat est rerum reiciendis est dignissimos modi.&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Private function placeholder&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;MyClass&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;#myPrivateFunction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// TODO: Implement function logic here&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Vel pharetra vel turpis nunc eget lorem dolor. Ut tellus elementum sagittis vitae et. Donec ultrices tincidunt arcu non sodales neque sodales. Dis parturient montes nascetur ridiculus &lt;kbd&gt;mus&lt;/kbd&gt; mauris vitae. Pulvinar etiam non quam lacus suspendisse. Senectus et netus et malesuada. Sed viverra tellus in hac habitasse. Est sit amet facilisis magna etiam tempor orci eu lobortis.&lt;/p&gt;
 &lt;section&gt;Ac turpis egestas integer eget. Euismod elementum nisi quis eleifend. Risus quis varius quam quisque id diam. Adipiscing elit ut aliquam purus sit amet. Tristique senectus et netus et malesuada fames ac. Fames ac turpis egestas sed tempus urna et pharetra. Vel pharetra vel turpis nunc eget lorem dolor. Augue eget arcu dictum varius duis at. Nibh tortor id aliquet lectus proin nibh.&lt;/section&gt;
-&lt;h2&gt;Bibendum ut tristique&lt;/h2&gt;
-&lt;p&gt;Et egestas quis ipsum suspendisse ultrices gravida. &lt;mark&gt;Est placerat in egestas&lt;/mark&gt; erat imperdiet. Imperdiet dui accumsan sit amet nulla facilisi. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Aliquet risus feugiat in ante metus dictum at tempor. Vel pharetra vel turpis nunc eget lorem. Suscipit tellus mauris a diam maecenas. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Justo eget magna fermentum iaculis. Sed euismod nisi porta lorem mollis aliquam ut porttitor leo. Gravida rutrum quisque non tellus orci. Cursus metus aliquam eleifend mi in. Vulputate mi sit amet mauris commodo.&lt;/p&gt;
-&lt;p&gt;Arcu odio ut sem nulla pharetra diam sit amet. Ipsum faucibus vitae aliquet nec ullamcorper sit. At imperdiet dui accumsan sit amet nulla facilisi. In nibh mauris cursus mattis molestie a iaculis at erat. Suspendisse in est ante in nibh. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Elit duis tristique sollicitudin nibh. Sagittis nisl rhoncus mattis rhoncus urna neque. Sit amet volutpat consequat mauris nunc. Eget nullam non nisi est sit amet. Et leo duis ut diam quam. Tincidunt arcu non sodales neque sodales ut. Auctor elit sed vulputate mi sit amet. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Cras adipiscing enim eu turpis. Placerat in egestas erat imperdiet. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor.&lt;/p&gt;
+&lt;h2&gt;Hic temporibus voluptatem et aliquid incidunt id illo quibusdam!&lt;/h2&gt;
+&lt;p&gt;Non Quis animi id reiciendis consectetur aut saepe quasi est enim ipsum et corporis quas ut officiis sapiente aut illum delectus? Quo consequatur Quis et itaque quas ea laudantium illum At quas voluptatem aut culpa ratione cum internos velit eum modi eius. Ab nesciunt aperiam ut sint internos id amet placeat in officia similique et deserunt beatae sed nostrum soluta. Non veniam dolor vel eaque nihil in illum repudiandae aut delectus galisum qui autem quisquam est quia ipsum.&lt;/p&gt;
+&lt;p&gt;Sit quis quas sed nisi voluptatem et galisum molestias et sint perferendis. Qui voluptatibus incidunt sit officia assumenda quo commodi nemo et numquam vitae et excepturi error?&lt;/p&gt;
 &lt;div class=&quot;video&quot;&gt;
-&lt;iframe src=&quot;https://www.youtube.com/embed/fop5YIk5iek?controls=0&quot; title=&quot;YouTube video player&quot; width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe src=&quot;https://www.youtube.com/embed/ScMzIvxBSi4?controls=0&quot; title=&quot;YouTube video player&quot; width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 </content
     >

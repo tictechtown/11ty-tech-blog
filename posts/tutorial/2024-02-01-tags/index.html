@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Eleventy Starter Blog</title>
-<meta name="description" content="Short demo for ">
+<meta name="description" content="How to set up tags for easy management">
 <meta name="keywords" content="eleventy,blog,theme,template,starter">
 
 <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
@@ -23,11 +23,11 @@
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Eleventy Starter Blog">
-<meta property="og:title" content="Eleventy Starter Blog">
-<meta property="og:description" content="Short demo for ">
+<meta property="og:title" content="Tags management">
+<meta property="og:description" content="How to set up tags for easy management">
 <meta property="og:url" content="https://example.com">
-<meta property="og:type" content="website">
-<meta property="og:image" content="/11ty-tech-blog/images/placeholder-og-image.jpg">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/override-placeholder-image.jpg">
 
 <meta name="generator" content="Eleventy v2.0.1">
 
@@ -40,6 +40,28 @@
 <link rel="alternate" href="/11ty-tech-blog/feed/feed.json" type="application/json" title="Eleventy Starter Blog">
 
 <!-- LD+JSON -->
+
+
+<meta property="article:published_time" content="Thu Feb 01 2024 00:00:00 GMT+0000 (Coordinated Universal Time)">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Tags management",
+    "proficiencyLevel": "Beginner",
+    "image": "/images/override-placeholder-image.jpg",
+    "author": "&lt;Author Name&gt;",
+    "keywords": "tutorial eleventy",
+    "url": "https://example.com/11ty-tech-blog/posts/tutorial/2024-02-01-tags/",
+    "datePublished": "Thu Feb 01 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "dateCreated": "Thu Feb 01 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "dateModified": "Thu Feb 01 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
+    "description": "How to set up tags for easy management",
+    
+    
+  }
+</script>
 
 
  <script>
@@ -141,20 +163,62 @@
     </header>
     <main class="content">
       
-<h1>#notice</h1>
 
- <ul reversed="" class="blog-posts">
-   
-  <li class="">
-    <time datetime="February 18, 2024">February 18, 2024</time>
-    &nbsp;-&nbsp;
-    <a href="/11ty-tech-blog/posts/tutorial/notice/" class="postlist-link">
-      Post with notices or alert boxes
-    </a>
-  </li>
-
+<header>
+  <time>Posted on February 1, 2024</time>
   
-</ul>
+  <ul class="list-horizontal">
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/tutorial/" class="post-tag">tutorial</a>
+    </li>
+    <li class="page-tag">
+      <a href="/11ty-tech-blog/tags/eleventy/" class="post-tag">eleventy</a>
+    </li>
+  </ul>
+  <h1>Tags management</h1>
+</header>
+
+ 
+<article><p>When writing posts, it's nice for the reader to be able to see all posts related to the same tag. Also an important step for the writer, to organize his thoughts and ideas.
+Thankfully, eleventy makes it easy to automate this process.</p>
+<h3>In the frontmatter</h3>
+<p>The tags can be set in the page's frontmatter.</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: ...
+description: ...
+tags: tag1</span>
+<span class="token punctuation">---</span></span></code></pre>
+<p>By default, if you write <code>tags: tag1 tag2 tag3</code>, Eleventy will interpret this as one tag with name <code>tag1 tag2 tag3</code>. This is not something we want.
+Instead, if you want a list of tags, you should use the following syntax</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: ...
+description: ...
+tags:
+  - tag1
+  - tag2
+  - tag3</span>
+<span class="token punctuation">---</span></span></code></pre>
+<p>This will create 3 tags, <code>tag1</code> <code>tag2</code> and <code>tag3</code></p>
+<h3>In the enclosing folder</h3>
+<p>You can automatically add tags to every entries in the same folder if you create a <code>.json</code> with the folder name.
+For instance, if you are in the folder <code>tutorial</code>, add a <code>tutorial.json</code> in it, with the following values:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tags"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"tutorial"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This will automatically add the tag <code>tutorial</code> to all posts inside the folder <code>tutorial</code>.</p>
+</article>
+<footer>
+  <nav class="pagination">
+    <div class="prev">
+      <a href="/11ty-tech-blog/posts/tutorial/syntax/">
+        <strong>‹ Code Blocks Theme</strong></a>
+      
+    </div>
+
+    <div class="">
+    </div>
+  </nav>
+</footer>
 
 
     </main>
